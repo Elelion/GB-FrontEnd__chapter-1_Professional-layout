@@ -267,15 +267,36 @@ body {
 .footer__services {
   display: flex;
   min-height: 341px;
-  border: 1px solid red;
   justify-content: space-between;
   align-items: center;
 }
 
 .footer__services-item {
+  display: flex;
   width: 360px;
   height: 134px;
-  border: 1px solid red;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__services-img {
+  width: 45px;
+  height: 32px;
+}
+
+.footer__services-item p {
+  color: white;
+  text-align: center;
+}
+
+.footer__services-title {
+  font-size: 20px;
+}
+
+.footer__services-description {
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 .footer__subscribe {
@@ -285,12 +306,78 @@ body {
 }
 
 .footer__subscribe-wrapper {
-  border: 1px solid red;
+  display: flex;
   min-height: inherit;
+  justify-content: space-around;
+}
+
+.footer__subscribe-left,
+.footer__subscribe-right {
+  display: flex;
+  min-height: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__subscribe-description {
+  width: 360px;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.footer__subscribe-description span {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer__subscribe-right_subscribe {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__subscribe-right input {
+  width: 216px;
+  height: 49px;
+  padding-left: 30px;
+  font-size: 14px;
+  border-bottom-left-radius: 24px;
+  border-top-left-radius: 24px;
+  border: none;
+  background: #E1E1E1;
+}
+
+.footer__subscribe-right a {
+  display: block;
+  width: 100px;
+  height: 49px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+  background: #F16D7F;
+  line-height: 3;
 }
 
 .footer__copyright {
+  display: flex;
   min-height: 79px;
-  border: 1px solid red;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.footer__copyright-left,
+.footer__copyright-right {
+
+}
+
+.footer__copyright-left p {
+  font-size: 16px;
+  color: white;
+}
+
 /* NOTE: end: footer */
