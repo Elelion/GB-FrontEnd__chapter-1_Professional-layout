@@ -1,0 +1,390 @@
+@font-face {
+  font-family: 'LatoRegular';
+  src: url(../fonts/Lato-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'LatoRegular';
+}
+
+
+/* NOTE: header */
+
+.header {
+  height: 75px;
+  background: #222222;
+}
+
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+
+  /* NOTE: для старых браузеров */
+  width: 100%;
+
+  margin: 0 auto;
+
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+
+.header__wrapper {
+  display: flex;
+  height: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__right {
+
+}
+
+.header__left {
+
+}
+
+.header__logo {
+  text-decoration: none;
+  margin-right: 41px;
+}
+
+/* NOTE: задать всем елементам КРОМЕ последнего.... */
+.header__item:not(:last-child) {
+  margin-right: 33px;
+}
+
+/* NOTE: end: header */
+
+
+/**/
+
+
+/* NOTE: catalog promo */
+
+.catalog__promo {
+  height: 148px;
+  background: #F1E4E6;
+}
+
+.catalog__promo-wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog__promo-left {
+  max-width: 194px;
+}
+
+.catalog__promo-left h1 {
+  color: #F16D7F;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.catalog__promo-right {
+  width: 210px;
+  font-size: 14px;
+}
+
+.catalog__promo-right p {
+  color: #636363;
+}
+
+.catalog__promo-right span {
+  color: #F16D7F;
+}
+
+/* NOTE: end: catalog promo */
+
+
+/**/
+
+
+/* NOTE: products */
+
+.catalog__products {
+  margin: 100px 0 100px 0;
+}
+
+.catalog__products-menu {
+  /*display: flex;*/
+  text-align: center;
+  margin-bottom: 47px;
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+}
+
+.catalog__products-menu_left {
+  float: left;
+}
+
+.catalog__products-menu_filter {
+  font-size: 17px;
+  color: black;
+}
+
+.catalog__products-select {
+  color: #9F9F9F;
+  text-transform: uppercase;
+  /*border: none;*/
+  /*outline: none;*/
+  /*-moz-appearance: none;*/
+  /*-webkit-appearance: none;*/
+  /*appearance: none;*/
+}
+
+.catalog__products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* TODO: DRY !!! */
+.product__item {
+  width: 360px;
+  height: 581px;
+  background: #F8F8F8;
+}
+
+.product__img {
+  width: 360px;
+  height: 420px;
+}
+
+.products__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 314px;
+  height: 116px;
+  margin: 26px auto;
+}
+
+.products__title {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+
+.products__description {
+  font-size: 14px;
+  font-weight: lighter;
+  color: #5D5D5D;
+}
+
+.products__price {
+  font-size: 16px;
+  color: #F16D7F;
+}
+/* TODO: end: DRY !!! */
+
+.products__pagination {
+  width: 284px;
+  height: 44px;
+  margin: 48px auto 0 auto;
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination a {
+  display: block;
+  width: 8px;
+  padding: 0 12px;
+  height: inherit;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 2.8;
+  text-decoration: none;
+  color: #EBEBEB;
+  transition: background-color .3s;
+}
+
+.pagination a:first-child {
+  color: black;
+}
+
+.pagination a:last-child {
+  color: black;
+}
+
+.pagination a.active {
+  color: #EF5B70;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+/* NOTE: end: products */
+
+
+/**/
+
+
+/* NOTE: services */
+
+.services {
+  background: #222224;
+}
+
+.services__wrapper {
+  display: flex;
+  min-height: 341px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services__item {
+  display: flex;
+  width: 360px;
+  height: 134px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services__img {
+  width: 45px;
+  height: 32px;
+}
+
+.services__item h3,
+.services__item p {
+  color: white;
+  text-align: center;
+}
+
+.services__title {
+  font-size: 20px;
+}
+
+.services__description {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+/* NOTE: end: services */
+
+
+/**/
+
+
+/* NOTE: subscribe */
+
+.footer__subscribe {
+  min-height: 448px;
+  background: url("../img/footer-subscribe.png") no-repeat;
+  background-size: cover;
+}
+
+.footer__subscribe-wrapper {
+  display: flex;
+  min-height: inherit;
+  justify-content: space-around;
+}
+
+.footer__subscribe-left,
+.footer__subscribe-right {
+  display: flex;
+  min-height: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__subscribe-description {
+  width: 360px;
+  margin-top: 28px;
+  text-align: center;
+  color: black;
+}
+
+.footer__subscribe-description span {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer__subscribe_right-subscribe {
+  width: inherit;
+  margin-top: 20px;
+}
+
+.footer__subscribe-form {
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__subscribe_right-subscribe .footer__subscribe_search-input {
+  width: 210px;
+  height: 49px;
+  padding-left: 30px;
+  font-size: 14px;
+  border-bottom-left-radius: 24px;
+  border-top-left-radius: 24px;
+  border: none;
+  background: #E1E1E1;
+}
+
+.footer__subscribe_right-subscribe .footer__subscribe_search-btn {
+  display: block;
+  width: 100px;
+  height: 49px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+  border: none;
+  background: #F16D7F;
+  outline:none;
+}
+
+.footer__subscribe_right-subscribe .footer__subscribe_search-btn ::placeholder {
+
+}
+
+/* NOTE: end: subscribe */
+
+
+/* NOTE: footer */
+.footer {
+  background: #222224;
+}
+
+.footer__copyright {
+  display: flex;
+  min-height: 79px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__copyright-left,
+.footer__copyright-right {
+
+}
+
+.footer__copyright-left p {
+  font-size: 16px;
+  color: white;
+}
+
+/* NOTE: end: footer */
