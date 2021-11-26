@@ -1,0 +1,39 @@
+@import "../../general-mixins";
+
+.services {
+  background: #222224;
+
+  &__wrapper {
+    @include flexCenterBlock(space-between);
+
+    min-height: 341px;
+  }
+
+  &__item {
+    @include flexCenterBlock(space-between);
+
+    width: 360px;
+    height: 134px;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 45px;
+    height: 32px;
+  }
+
+  &__item h3,
+  &__item p {
+    color: white;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+}

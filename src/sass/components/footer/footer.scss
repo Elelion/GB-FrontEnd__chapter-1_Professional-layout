@@ -1,0 +1,136 @@
+@import "../../general-mixins";
+
+.footer {
+  background: #222224;
+
+  /* NOTE: subscribe */
+  &__subscribe {
+    min-height: 448px;
+    background: url("../../src/img/footer-subscribe.png") no-repeat;
+    background-size: cover;
+
+    &-wrapper {
+      display: flex;
+      min-height: inherit;
+      justify-content: space-around;
+    }
+
+    &-left,
+    &-right {
+      @include flexCenterBlock();
+
+      min-height: inherit;
+      flex-direction: column;
+      //align-items: center;
+    }
+
+    &-description {
+      width: 360px;
+      margin-top: 28px;
+      text-align: center;
+      color: black;
+    }
+
+    &-description span {
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &_right-subscribe {
+      width: inherit;
+      margin-top: 20px;
+    }
+
+    &-form {
+      @include flexCenterBlock();
+
+      width: inherit;
+    }
+
+    &_right-subscribe &_search-input {
+      width: 210px;
+      height: 49px;
+      padding-left: 30px;
+      font-size: 14px;
+      border-bottom-left-radius: 24px;
+      border-top-left-radius: 24px;
+      border: none;
+      background: #E1E1E1;
+    }
+
+    &_right-subscribe &_search-btn {
+      display: block;
+      width: 100px;
+      height: 49px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      color: white;
+      border-bottom-right-radius: 24px;
+      border-top-right-radius: 24px;
+      border: none;
+      background: #F16D7F;
+      outline:none;
+    }
+
+    &_right-subscribe &_search-btn::placeholder {
+
+    }
+  }
+  /* NOTE: end: subscribe */
+
+
+  /**/
+
+
+  /* NOTE: copyright */
+  &__copyright {
+    display: flex;
+    min-height: 79px;
+    justify-content: space-around;
+    align-items: center;
+
+    &-left,
+    &-right {
+
+    }
+
+    &-right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-facebook,
+    &-instagram,
+    &-twitter,
+    &-p {
+      width: 32px;
+      height: 32px;
+      fill: black;
+      background: white;
+      text-align: center;
+      line-height: 2;
+    }
+  }
+
+  &__social:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__social {
+    color: black;
+  }
+
+  &__social:hover {
+    color: white;
+    background: #F26376;
+  }
+
+  &__copyright-left p {
+    font-size: 16px;
+    color: white;
+  }
+  /* NOTE: end: copyright */
+}

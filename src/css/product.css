@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'LatoRegular';
-  src: url(../fonts/Lato-Regular.ttf);
+  src: url(../../src/fonts/Lato-Regular.ttf);
 }
 
 * {
@@ -248,7 +248,7 @@ body {
   padding-right: 20px;
   text-transform: uppercase;
   border: none;
-  background: url('../img/arrow-down.png') no-repeat right center;
+  background: url('../../src/img/arrow-down.png') no-repeat right center;
   color: #9F9F9F;
   outline: none;
   -moz-appearance: none;
@@ -351,7 +351,7 @@ body {
 
 .footer__subscribe {
   min-height: 448px;
-  background: url("../img/footer-subscribe.png") no-repeat;
+  background: url("../../src/img/footer-subscribe.png") no-repeat;
   background-size: cover;
 }
 

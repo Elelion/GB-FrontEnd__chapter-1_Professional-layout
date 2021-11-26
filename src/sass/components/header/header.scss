@@ -1,0 +1,35 @@
+@import "../../general-mixins";
+
+.header {
+  height: 75px;
+  background: #222222;
+
+  &__wrapper {
+    @include flexCenterBlock(space-between);
+
+    height: inherit;
+  }
+
+  &__right {
+
+  }
+
+  &__left {
+
+  }
+
+  &__logo {
+    text-decoration: none;
+    margin-right: 41px;
+  }
+
+  /* NOTE: задать всем елементам КРОМЕ последнего.... */
+  &__item:not(:last-child) {
+    margin-right: 33px;
+  }
+}
+
+
+
+
+

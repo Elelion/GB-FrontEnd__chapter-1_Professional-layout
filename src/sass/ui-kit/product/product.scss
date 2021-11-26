@@ -1,0 +1,41 @@
+.products {
+
+  &__item {
+    width: 360px;
+    height: 581px;
+    background: #F8F8F8;
+  }
+
+  &__img img, &__video video {
+    width: 360px;
+    height: 420px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 314px;
+    min-height: 116px;
+    margin: 26px auto;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #5D5D5D;
+  }
+
+  &__price {
+    font-size: 16px;
+    color: #F16D7F;
+  }
+}
+/* NOTE: end: products */
