@@ -1,0 +1,88 @@
+/*
+Для запуска пишем в терминале:
+
+sass --watch src/sass/styles.scss:src/css/_style.css
+*/
+
+/**/
+
+
+@import "general-mixins";
+
+
+/**/
+
+
+/* NOTE: general variables */
+$fontRedColor: #F16D7F;
+/* NOTE: end: general variables */
+
+
+/**/
+
+
+/* NOTE: general fonts */
+@font-face {
+  font-family: 'LatoRegular';
+  src: url(../../src/fonts/Lato-Regular.ttf);
+}
+/* NOTE: end: general fonts */
+
+
+/**/
+
+
+/* NOTE: general settings  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  @include font-family__normal;
+}
+
+html {
+  overflow-x: hidden
+}
+/* NOTE: end: general settings  */
+
+
+/**/
+
+/*
+NOTE:
+
+components - общие компоненты сайта
+pages - конкретные страницы сайта
+ui-kit - отдельные (готовые) елементы (блоки) сайта, которые мы можем переисп.
+*/
+
+/* NOTE: components */
+@import "components/general/general";
+@import "components/header/header";
+@import "components/services/services";
+@import "components/footer/footer";
+/* NOTE: end: components */
+
+
+/**/
+
+
+/* NOTE: pages */
+@import "pages/index/index";
+@import "pages/catalog/catalog";
+@import "pages/product/product";
+@import "pages/cart/cart";
+@import "pages/registration/registration";
+/* NOTE: end: pages */
+
+
+/**/
+
+
+/* NOTE: ui-kit */
+@import "ui-kit/breadcrumb/breadcrumb";
+@import "ui-kit/product/product";
+/* NOTE: end: ui-kit */

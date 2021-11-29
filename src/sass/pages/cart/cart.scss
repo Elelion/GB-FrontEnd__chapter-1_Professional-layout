@@ -1,0 +1,212 @@
+@import "../../general-mixins";
+
+
+/**/
+
+
+$heightCartProductBlock: 306px;
+$colorGray: #656565;
+$colorRed: #EF5B70;
+
+
+/**/
+
+
+.cart {
+  margin: 100px 0 100px 0;
+
+  &__wrapper {
+    @include flexCenterBlock(space-between);
+  }
+
+  &__left {
+    width: 652px;
+  }
+
+  &__product {
+    width: 652px;
+    min-height: $heightCartProductBlock;
+    margin-bottom: 40px;
+    box-shadow: (17px 19px 24px rgba(0, 0, 0, 0.13));
+
+    &-info {
+      float: left;
+      margin-top: 22px;
+    }
+
+    &-image, &-image img {
+      float: left;
+      width: 262px;
+      height: $heightCartProductBlock;
+    }
+
+    &-title {
+      width: 262px;
+      min-height: 58px;
+      margin-left: 30px;
+      margin-bottom: 42px;
+
+      & p {
+        font-size: 24px;
+      }
+    }
+
+    &-details {
+      width: 166px;
+      min-height: 122px;
+      margin-left: 30px;
+      font-size: 22px;
+      color: $colorGray;
+
+      & p:not(:last-child) {
+        margin-top: 6px;
+      }
+
+      & span {
+        color: $colorRed;
+      }
+
+      &_price {}
+      &_color {}
+      &_size {}
+
+      &_quantity input {
+        width: 44px;
+        height: 25px;
+        text-align: center;
+        color: $colorGray;
+      }
+    }
+
+    &-close {
+      float: right;
+      margin: 28px 22px 0 0;
+
+      & a {
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: $colorGray;
+      }
+    }
+
+    &-buttons {
+      @include flexCenterBlock(space-between);
+
+      height: 50px;
+      margin-top: 72px;
+
+      & a {
+        width: 225px;
+        height: inherit;
+        text-align: center;
+        text-decoration: none;
+        color: $colorGray;
+        border: 1px solid #A4A4A4;
+        line-height: 3;
+      }
+    }
+  }
+
+  &__right {
+    @include flexCenterBlock(space-between);
+
+    width: 541px;
+    min-height: 541px;
+    flex-direction: column;
+  }
+
+  &__feedback {
+    width: 360px;
+    min-height: 272px;
+    margin-bottom: 58px;
+
+    &-title {
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 100;
+      text-transform: uppercase;
+      color: $colorGray;
+    }
+
+    &-address {
+      & input {
+        width: 340px;
+        height: 45px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border: 1px solid #A4A4A4;
+      }
+    }
+
+    &-button button {
+      width: 101px;
+      height: 35px;
+      text-transform: uppercase;
+      border: 1px solid $colorGray;
+      background: white;
+      outline: none;
+    }
+  }
+
+  &__summary {
+    @include flexCenterBlock(center);
+
+    width: 360px;
+    min-height: 214px;
+    background: #F5F3F3;
+    flex-direction: column;
+
+    &-price {
+      height: 82px;
+      color: $colorGray;
+      font-weight: 100;
+
+      &:before {
+        position: relative;
+        display: block;
+        top: 84px;
+        content: "";
+        width: 275px;
+        margin: 0 auto;
+        border-bottom: 1px solid #E2E2E2;
+      }
+
+      & p {
+        text-align: right;
+        margin-top: 14px;
+        font-size: 11px;
+        text-transform: uppercase;
+
+        &:last-child {
+          font-size: 16px;
+        }
+      }
+
+      & span {
+        margin-left: 24px;
+      }
+
+      &_red {
+        color: $colorRed;
+      }
+    }
+
+    &-button {
+      margin-top: 30px;
+
+      & button {
+        width: 273px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 100;
+        text-transform: uppercase;
+        border: none;
+        color: white;
+        background: $colorRed;
+        outline: none;
+      }
+    }
+  }
+}
+
