@@ -1,0 +1,123 @@
+@import "../../general-mixins";
+
+
+/**/
+
+
+$heightCartProductBlock: 306px;
+$colorGray: #A4A4A4;
+$colorRed: #EF5B70;
+
+
+/**/
+
+
+.registration {
+  margin: 64px 0 100px 0;
+
+  &__wrapper {
+    @include flexCenterBlock(space-between);
+  }
+
+  &__left {
+    width: 460px;
+    min-height: 460px;
+  }
+
+  &__form {
+    &-address {
+      height: 149px;
+    }
+
+    &-label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 100;
+    }
+
+    &-input {
+      display: block;
+      width: 340px;
+      height: 45px;
+      padding-left: 18px;
+      border: 1px solid $colorGray;
+    }
+
+    &-input:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &-gender {
+      margin-top: 33px;
+      margin-bottom: 33px;
+
+      & input {
+        margin-right: 10px;
+      }
+
+      & label {
+        margin-right: 26px;
+        font-size: 11px;
+        font-weight: 100;
+      }
+    }
+
+    &-details {
+      p {
+        font-size: 13px;
+      }
+    }
+
+    &-buttons {
+      margin-top: 40px;
+
+      & button {
+        width: 167px;
+        height: 50px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: white;
+        border: none;
+        background: $colorRed;
+      }
+    }
+  }
+
+  /**/
+
+  &__right {
+    @include flexCenterBlock(space-between);
+
+    width: 650px;
+    min-height: 350px;
+    flex-direction: column;
+  }
+
+  &__info {
+
+    &-font {
+      font-size: 24px;
+      font-weight: 100;
+    }
+
+    & h2 {
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    & p {
+      margin-bottom: 22px;
+    }
+
+    & ul li {
+      margin-bottom: 19px;
+      list-style-type: none;
+    }
+
+    & ul li i {
+      margin-right: 22px;
+    }
+  }
+}
+

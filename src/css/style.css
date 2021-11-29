@@ -53,6 +53,7 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /**/
+/**/
 .header {
   height: 75px;
   background: #222222;
@@ -344,45 +345,6 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 
 /* NOTE: end: products */
 /**/
-/* NOTE: breadcrumb */
-.breadcrumb__chapter {
-  height: 148px;
-  background: #F8F3F4;
-}
-
-.breadcrumb__wrapper {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.breadcrumb__left {
-  max-width: 194px;
-}
-
-.breadcrumb__left h1 {
-  margin-top: 0;
-  color: #F16D7F;
-  font-size: 24px;
-  font-weight: 100;
-}
-
-.breadcrumb__right {
-  width: 210px;
-  font-size: 14px;
-}
-
-.breadcrumb__right p {
-  color: #636363;
-}
-
-.breadcrumb__right span {
-  color: #F16D7F;
-}
-
-/* NOTE: end: breadcrumb */
-/**/
 /* NOTE: products */
 .catalog__products {
   margin: 100px 0 100px 0;
@@ -401,17 +363,22 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 .catalog__products-menu_filter {
+  width: 360px;
+  height: 48px;
   font-size: 17px;
   color: black;
 }
 
 /* NOTE: filter */
 .filter {
+  z-index: 50;
   width: 120px;
   box-sizing: border-box;
   position: relative;
   outline: none;
   border: none;
+  height: 38px;
+  line-height: 3;
 }
 
 /* NOTE: отключить треугольник */
@@ -430,14 +397,21 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 .filter[open] {
+  width: 360px;
+  height: 48px;
   padding-left: 10px;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
 }
 
 .filter[open] > summary {
+  width: 348px;
+  height: 48px;
+  text-align: left;
   color: #F16D7F;
-  outline: none;
+  background-color: white;
   border: none;
+  line-height: 3;
+  outline: none;
 }
 
 /* NOTE: отключаем треугольник у внутренних блоков */
@@ -554,6 +528,7 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 
 .pagination a.active {
   color: #EF5B70;
+  animation: 2s testAnimation;
 }
 
 .pagination a:hover:not(.active) {
@@ -898,9 +873,165 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   outline: none;
 }
 
+/**/
+/**/
+/**/
+.registration {
+  margin: 64px 0 100px 0;
+  /**/
+}
+.registration__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.registration__left {
+  width: 460px;
+  min-height: 460px;
+}
+.registration__form-address {
+  height: 149px;
+}
+.registration__form-label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 100;
+}
+.registration__form-input {
+  display: block;
+  width: 340px;
+  height: 45px;
+  padding-left: 18px;
+  border: 1px solid #A4A4A4;
+}
+.registration__form-input:not(:last-child) {
+  margin-bottom: 20px;
+}
+.registration__form-gender {
+  margin-top: 33px;
+  margin-bottom: 33px;
+}
+.registration__form-gender input {
+  margin-right: 10px;
+}
+.registration__form-gender label {
+  margin-right: 26px;
+  font-size: 11px;
+  font-weight: 100;
+}
+.registration__form-details p {
+  font-size: 13px;
+}
+.registration__form-buttons {
+  margin-top: 40px;
+}
+.registration__form-buttons button {
+  width: 167px;
+  height: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  background: #EF5B70;
+}
+.registration__right {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 650px;
+  min-height: 350px;
+  flex-direction: column;
+}
+.registration__info-font {
+  font-size: 24px;
+  font-weight: 100;
+}
+.registration__info h2 {
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+.registration__info p {
+  margin-bottom: 22px;
+}
+.registration__info ul li {
+  margin-bottom: 19px;
+  list-style-type: none;
+}
+.registration__info ul li i {
+  margin-right: 22px;
+}
+
 /* NOTE: end: pages */
 /**/
 /* NOTE: ui-kit */
+/* NOTE: создаем анимацию */
+@keyframes leftAnimation {
+  /* NOTE: конечная позиция */
+  /*
+  from {
+    margin-left: 300px;
+  }
+  */
+  /* NOTE: начальная позиция */
+  /*
+  to {
+    margin-left: 0;
+  }
+  */
+  /**/
+  /* NOTE: начало анимации */
+  0% {
+    margin-left: -400px;
+    font-size: 4px;
+    visibility: hidden;
+  }
+  10% {
+    visibility: visible;
+    transition: 1s;
+  }
+  25% {
+    font-size: 8px;
+  }
+  50% {
+    font-size: 16px;
+  }
+  75% {
+    font-size: 20px;
+  }
+  /* NOTE: если анимация выполнена на 100% */
+  100% {
+    margin-left: 0;
+    font-size: 24px;
+  }
+}
+/**/
+@keyframes rightAnimation {
+  0% {
+    margin-right: -400px;
+    font-size: 4px;
+    visibility: hidden;
+  }
+  10% {
+    visibility: visible;
+    transition: 1s;
+  }
+  25% {
+    font-size: 6px;
+  }
+  50% {
+    font-size: 8px;
+  }
+  75% {
+    font-size: 10px;
+  }
+  100% {
+    margin-left: 0;
+    font-size: 14px;
+  }
+}
 .breadcrumb__chapter {
   height: 148px;
   background: #F8F3F4;
@@ -912,17 +1043,21 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   align-items: center;
 }
 .breadcrumb__left {
-  max-width: 194px;
+  width: auto;
 }
 .breadcrumb__left h1 {
   margin-top: 0;
   color: #F16D7F;
   font-size: 24px;
   font-weight: 100;
+  /* NOTE: анимация описана выше */
+  animation: 0.5s leftAnimation;
 }
 .breadcrumb__right {
   width: 210px;
   font-size: 14px;
+  /* NOTE: анимация описана выше */
+  animation: 0.5s rightAnimation;
 }
 .breadcrumb__right p {
   color: #636363;
@@ -931,22 +1066,79 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   color: #F16D7F;
 }
 
+/**/
+/**/
+/**/
 .products__item {
+  /*
+  NOTE:
+  если у родителя значение position установлено как static или родителя нет,
+  то отсчет координат ведется от края окна браузера. Если у родителя
+  значение position задано как fixed, relative или absolute, то отсчет
+  координат ведется от края родительского элемента.
+  */
+  position: relative;
   width: 360px;
   height: 581px;
   background: #F8F8F8;
+  overflow: hidden;
+}
+.products__item:hover .products__overlay {
+  opacity: 1;
+  /*
+  NOTE:
+  transform: rotate(360deg); - крутить по часовой
+  transform: rotate(-360deg); - крутить против часовой
+  transform: rotateX(360deg); - крутить по оси Х
+  transform: rotateY(360deg); - крутить по оси Y
+
+
+  */
+  transform: rotate(360deg);
 }
 .products__img img, .products__video video {
   width: 360px;
   height: 420px;
 }
+.products__overlay {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 420px;
+  background-color: rgba(58, 56, 56, 0.83);
+  opacity: 0;
+  /* NOTE: можно задавать конкретные елементы: transition: color 2s, background 5s; */
+  transition: 0.5s ease-in;
+}
+.products__overlay button {
+  width: 139px;
+  height: 44px;
+  font-size: 14px;
+  border: 1px solid white;
+  background: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+.products__overlay button:hover {
+  transform: scale(1.3);
+  border-radius: 50%;
+  transition: all 0.5s;
+}
 .products__info {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-content: center;
+  align-items: center;
   width: 314px;
   min-height: 116px;
   margin: 26px auto;
+  flex-direction: column;
 }
 .products__title {
   font-size: 13px;
