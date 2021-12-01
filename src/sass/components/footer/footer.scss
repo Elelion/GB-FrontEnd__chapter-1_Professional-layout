@@ -1,4 +1,9 @@
 @import "../../general-mixins";
+@import "../../components/general/general";
+
+
+/**/
+
 
 .footer {
   background: #222224;
@@ -10,9 +15,12 @@
     background-size: cover;
 
     &-wrapper {
-      display: flex;
+      @include flexCenterBlock(space-around);
       min-height: inherit;
-      justify-content: space-around;
+
+      @media screen and (max-width: $tabletWidth) {
+        flex-direction: column;
+      }
     }
 
     &-left,
@@ -21,7 +29,19 @@
 
       min-height: inherit;
       flex-direction: column;
-      //align-items: center;
+    }
+
+    &-left {
+      @media screen and (max-width: $tabletWidth) {
+        min-height: 225px;
+      }
+    }
+
+    &-right {
+      @media screen and (max-width: $tabletWidth) {
+        min-height: 137px;
+        margin-bottom: 120px;
+      }
     }
 
     &-description {
@@ -29,6 +49,11 @@
       margin-top: 28px;
       text-align: center;
       color: black;
+
+      @media screen and (max-width: $mobileWidth) {
+        width: 324px;
+        font-size: 14px;
+      }
     }
 
     &-description span {
@@ -70,7 +95,7 @@
       border-bottom-right-radius: 24px;
       border-top-right-radius: 24px;
       border: none;
-      background: #F16D7F;
+      background: $colorRed;
       outline:none;
     }
 

@@ -7,9 +7,6 @@ sass --watch src/sass/styles.scss:src/css/_style.css
 /**/
 /**/
 /**/
-/* NOTE: general variables */
-/* NOTE: end: general variables */
-/**/
 /* NOTE: general fonts */
 @font-face {
   font-family: "LatoRegular";
@@ -42,6 +39,7 @@ pages - конкретные страницы сайта
 ui-kit - отдельные (готовые) елементы (блоки) сайта, которые мы можем переисп.
 */
 /* NOTE: components */
+/**/
 .container {
   /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
   max-width: 1140px;
@@ -51,8 +49,35 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
   padding: 0 10px;
 }
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
 
 /**/
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 /**/
 .header {
   height: 75px;
@@ -70,8 +95,36 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   text-decoration: none;
   margin-right: 41px;
 }
-.header__item:not(:last-child) {
+.header__item {
   margin-right: 33px;
+}
+@media screen and (max-width: 375px) {
+  .header__item:nth-child(2) {
+    display: none;
+  }
+  .header__item:nth-child(3) {
+    display: none;
+  }
+}
+
+/**/
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 
 /**/
@@ -85,6 +138,11 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   align-items: center;
   min-height: 341px;
 }
+@media screen and (max-width: 800px) {
+  .services__wrapper {
+    flex-direction: column;
+  }
+}
 .services__item {
   display: flex;
   justify-content: space-between;
@@ -93,6 +151,30 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   width: 360px;
   height: 134px;
   flex-direction: column;
+}
+@media screen and (max-width: 800px) {
+  .services__item:first-child {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .services__item:first-child {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .services__item:last-child {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .services__item:last-child {
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
 }
 .services__img {
   width: 45px;
@@ -111,6 +193,26 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /**/
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+/**/
 .footer {
   background: #222224;
   /* NOTE: subscribe */
@@ -126,8 +228,15 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 .footer__subscribe-wrapper {
   display: flex;
-  min-height: inherit;
   justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  min-height: inherit;
+}
+@media screen and (max-width: 800px) {
+  .footer__subscribe-wrapper {
+    flex-direction: column;
+  }
 }
 .footer__subscribe-left, .footer__subscribe-right {
   display: flex;
@@ -137,11 +246,28 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   min-height: inherit;
   flex-direction: column;
 }
+@media screen and (max-width: 800px) {
+  .footer__subscribe-left {
+    min-height: 225px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer__subscribe-right {
+    min-height: 137px;
+    margin-bottom: 120px;
+  }
+}
 .footer__subscribe-description {
   width: 360px;
   margin-top: 28px;
   text-align: center;
   color: black;
+}
+@media screen and (max-width: 375px) {
+  .footer__subscribe-description {
+    width: 324px;
+    font-size: 14px;
+  }
 }
 .footer__subscribe-description span {
   display: block;
@@ -221,25 +347,86 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 /**/
 /* NOTE: pages */
 /**/
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+/**/
 /* NOTE: promo */
 .promo {
   height: 764px;
   background: #F1E4E6;
 }
-.promo__title {
-  max-width: 377px;
-  padding-left: 20px;
-  border-left: 12px solid #F16D7F;
+@media screen and (max-width: 800px) {
+  .promo {
+    height: 367px;
+  }
 }
 .promo__wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   height: 100%;
-  background: url("../../src/img/man.png") no-repeat -228px 0;
 }
-.promo__decor {
+.promo__image {
+  width: 394px;
+  height: 100%;
+}
+.promo__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 375px) {
+  .promo__image {
+    display: none;
+  }
+}
+.promo__title {
+  max-width: 377px;
+  margin-right: 140px;
+  padding-left: 20px;
+  border-left: 12px solid #F16D7F;
+}
+@media screen and (max-width: 800px) {
+  .promo__title {
+    margin-right: 32px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .promo__title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.promo__decor-title {
+  font-size: 36px;
+}
+.promo__decor-subtitle {
+  font-size: 24px;
+}
+@media screen and (max-width: 800px) {
+  .promo__decor-subtitle {
+    font-size: 19px;
+  }
+}
+.promo__decor-red {
   color: #F16D7F;
 }
 
@@ -265,16 +452,16 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 180px;
 }
 .category__item:nth-child(1) {
-  background: url("../../src/img/category-woman.png");
+  background: url("../../src/img/category-woman.png") no-repeat center;
 }
 .category__item:nth-child(2) {
-  background: url("../../src/img/category-man.png");
+  background: url("../../src/img/category-man.png") no-repeat center;
 }
 .category__item:nth-child(3) {
-  background: url("../../src/img/category-kids.png");
+  background: url("../../src/img/category-kids.png") no-repeat center;
 }
 .category__item:nth-child(4) {
-  background: url("../../src/img/category-accesories.png");
+  background: url("../../src/img/category-accesories.png") no-repeat center;
 }
 .category__item p {
   font-size: 24px;
@@ -292,6 +479,24 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 260px;
   /* NOTE: за место gap */
   margin: 0 0 30px 0;
+}
+@media screen and (max-width: 800px) {
+  .category__item:not(:last-child) {
+    width: 232px;
+    height: 167px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .category__item:not(:last-child) {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 375px) {
+  .category__item:not(:last-child) {
+    width: 343px;
+    height: 247px;
+  }
 }
 .category__mask {
   display: flex;
@@ -344,6 +549,25 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /* NOTE: end: products */
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 /**/
 /* NOTE: products */
 .catalog__products {
@@ -536,6 +760,26 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /* NOTE: end: products */
+/**/
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 /**/
 /* NOTE: product slider */
 .product__slider {
@@ -967,6 +1211,25 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 /* NOTE: end: pages */
 /**/
 /* NOTE: ui-kit */
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 /* NOTE: создаем анимацию */
 @keyframes leftAnimation {
   /* NOTE: конечная позиция */
@@ -1067,6 +1330,25 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /**/
+/**/
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+  /* NOTE: для старых браузеров */
+  width: 100%;
+  margin: 0 auto;
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 /**/
 /**/
 .products__item {

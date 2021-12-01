@@ -1,4 +1,5 @@
 @import "../../general-mixins";
+@import "../../components/general/general";
 
 
 /**/
@@ -28,8 +29,18 @@
   }
 
   /* NOTE: задать всем елементам КРОМЕ последнего.... */
-  &__item:not(:last-child) {
+  &__item {
     margin-right: 33px;
+
+    @media screen and (max-width: $mobileWidth) {
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
   }
 }
 

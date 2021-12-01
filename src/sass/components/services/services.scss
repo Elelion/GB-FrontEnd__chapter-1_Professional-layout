@@ -1,4 +1,9 @@
 @import "../../general-mixins";
+@import "../../components/general/general";
+
+
+/**/
+
 
 .services {
   background: #222224;
@@ -7,6 +12,10 @@
     @include flexCenterBlock(space-between);
 
     min-height: 341px;
+
+    @media screen and (max-width: $tabletWidth) {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -15,6 +24,31 @@
     width: 360px;
     height: 134px;
     flex-direction: column;
+
+    &:first-child {
+      @media screen and (max-width: $tabletWidth) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: $mobileWidth) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &:last-child {
+      @media screen and (max-width: $tabletWidth) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      @media screen and (max-width: $mobileWidth) {
+        margin-top: 50px;
+        margin-bottom: 60px;
+      }
+    }
+
   }
 
   &__img {

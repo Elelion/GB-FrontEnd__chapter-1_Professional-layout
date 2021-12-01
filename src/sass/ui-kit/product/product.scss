@@ -1,11 +1,12 @@
 @import "../../general-mixins";
+@import "../../components/general/general";
 
 
 /**/
 
 
-$productWidth: 360px;
-$productHeight: 420px;
+$productWidthImg: 360px;
+$productHeightImg: 420px;
 
 
 /**/
@@ -21,7 +22,7 @@ $productHeight: 420px;
     координат ведется от края родительского элемента.
     */
     position: relative;
-    width: $productWidth;
+    width: $productWidthImg;
     height: 581px;
     background: #F8F8F8;
     overflow: hidden;
@@ -43,8 +44,8 @@ $productHeight: 420px;
   }
 
   &__img img, &__video video {
-    width: $productWidth;
-    height: $productHeight;
+    width: $productWidthImg;
+    height: $productHeightImg;
   }
 
   &__overlay {
@@ -53,8 +54,8 @@ $productHeight: 420px;
     position: absolute;
     top: 0;
     left: 0;
-    width: $productWidth;
-    height: $productHeight;
+    width: $productWidthImg;
+    height: $productHeightImg;
     background-color: rgba(58, 56, 56, 0.83);
     opacity: 0;
 
@@ -103,7 +104,7 @@ $productHeight: 420px;
 
   &__price {
     font-size: 16px;
-    color: #F16D7F;
+    color: $colorRed;
   }
 }
 /* NOTE: end: products */
