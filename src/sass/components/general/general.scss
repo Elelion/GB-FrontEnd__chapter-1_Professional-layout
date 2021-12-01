@@ -1,0 +1,28 @@
+$tabletWidth: 800px;
+$mobileWidth: 375px;
+
+$colorRed: #F16D7F;
+
+
+/**/
+
+
+.container {
+  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
+  max-width: 1140px;
+
+  /* NOTE: для старых браузеров */
+  width: 100%;
+
+  margin: 0 auto;
+
+  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
+  padding: 0 10px;
+
+  @media screen and (max-width: $tabletWidth) {
+    max-width: inherit;
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}

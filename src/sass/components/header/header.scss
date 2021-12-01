@@ -1,0 +1,50 @@
+@import "../../general-mixins";
+@import "../../components/general/general";
+
+
+/**/
+
+
+.header {
+  height: 75px;
+  background: #222222;
+
+  &__wrapper {
+    @include flexCenterBlock(space-between);
+
+    height: inherit;
+  }
+
+  &__right {
+
+  }
+
+  &__left {
+
+  }
+
+  &__logo {
+    text-decoration: none;
+    margin-right: 41px;
+  }
+
+  /* NOTE: задать всем елементам КРОМЕ последнего.... */
+  &__item {
+    margin-right: 33px;
+
+    @media screen and (max-width: $mobileWidth) {
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+

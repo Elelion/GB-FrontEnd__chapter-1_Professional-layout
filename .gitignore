@@ -1,0 +1,21 @@
+# IDE
+/.idea
+/.vscode
+
+# different
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+composer.phar
+composer.lock
+Thumbs.db
+.DS_Store
+.phpunit.result.cache
+
+# keys
+GB-git__Frontend_chapter-1
+GB-git__Frontend_chapter-1.pub
+
+# folders
+archive

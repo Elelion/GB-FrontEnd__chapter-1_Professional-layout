@@ -1,0 +1,131 @@
+@import "../../components/general/general";
+
+
+/* NOTE: создаем анимацию */
+@keyframes leftAnimation {
+
+  /* NOTE: конечная позиция */
+  /*
+  from {
+    margin-left: 300px;
+  }
+  */
+
+  /* NOTE: начальная позиция */
+  /*
+  to {
+    margin-left: 0;
+  }
+  */
+
+  /**/
+
+  /* NOTE: начало анимации */
+  0% {
+    margin-left: -400px;
+    font-size: 4px;
+    visibility: hidden;
+  }
+
+  10% {
+    visibility: visible;
+    transition: 1s;
+  }
+
+  25% {
+    font-size: 8px;
+  }
+
+  50% {
+    font-size: 16px;
+  }
+
+  75% {
+    font-size: 20px;
+  }
+
+  /* NOTE: если анимация выполнена на 100% */
+  100% {
+    margin-left: 0;
+    font-size: 24px;
+  }
+}
+
+/**/
+
+@keyframes rightAnimation {
+  0% {
+    margin-right: -400px;
+    font-size: 4px;
+    visibility: hidden;
+  }
+
+  10% {
+    visibility: visible;
+    transition: 1s;
+  }
+
+  25% {
+    font-size: 6px;
+  }
+
+  50% {
+    font-size: 8px;
+  }
+
+  75% {
+    font-size: 10px;
+  }
+
+  100% {
+    margin-left: 0;
+    font-size: 14px;
+  }
+}
+
+
+
+.breadcrumb {
+
+  &__chapter {
+    height: 148px;
+    background: #F8F3F4;
+  }
+
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    width: auto;
+
+    & h1 {
+      margin-top: 0;
+      color: $colorRed;
+      font-size: 24px;
+      font-weight: 100;
+
+      /* NOTE: анимация описана выше */
+      animation: 0.5s leftAnimation;
+    }
+  }
+
+  &__right {
+    width: 210px;
+    font-size: 14px;
+
+    /* NOTE: анимация описана выше */
+    animation: 0.5s rightAnimation;
+
+    & p {
+      color: #636363;
+    }
+
+    & span {
+      color: $colorRed;
+    }
+  }
+}
