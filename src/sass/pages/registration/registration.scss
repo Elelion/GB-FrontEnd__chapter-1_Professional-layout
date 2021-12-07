@@ -1,4 +1,5 @@
 @import "../../general-mixins";
+@import "../../settings";
 
 
 /**/
@@ -17,11 +18,19 @@ $colorRed: #EF5B70;
 
   &__wrapper {
     @include flexCenterBlock(space-between);
+
+    @media screen and (max-width: 740px) {
+      flex-direction: column;
+    }
   }
 
   &__left {
     width: 460px;
     min-height: 460px;
+
+    @media screen and (max-width: 740px) {
+      @include flexCenterBlock();
+    }
   }
 
   &__form {
@@ -64,6 +73,8 @@ $colorRed: #EF5B70;
     }
 
     &-details {
+      width: 359px;
+
       p {
         font-size: 13px;
       }
@@ -91,7 +102,16 @@ $colorRed: #EF5B70;
 
     width: 650px;
     min-height: 350px;
+    margin-top: -160px;
     flex-direction: column;
+
+    @media screen and (max-width: $tabletWidth) {
+      width: 354px;
+    }
+
+    @media screen and (max-width: 740px) {
+      margin-top: 40px;
+    }
   }
 
   &__info {
@@ -99,6 +119,12 @@ $colorRed: #EF5B70;
     &-font {
       font-size: 24px;
       font-weight: 100;
+
+
+      @media screen and (max-width: 1140px) {
+        width: 354px;
+        font-size: 16px;
+      }
     }
 
     & h2 {
@@ -111,6 +137,7 @@ $colorRed: #EF5B70;
     }
 
     & ul li {
+      display: flex;
       margin-bottom: 19px;
       list-style-type: none;
     }

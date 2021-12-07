@@ -39,7 +39,6 @@ pages - конкретные страницы сайта
 ui-kit - отдельные (готовые) елементы (блоки) сайта, которые мы можем переисп.
 */
 /* NOTE: components */
-/**/
 .container {
   /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
   max-width: 1140px;
@@ -59,25 +58,6 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /**/
-/**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /**/
 .header {
   height: 75px;
@@ -91,42 +71,73 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   align-items: center;
   height: inherit;
 }
+.header__right {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+@media screen and (max-width: 800px) {
+  .header__center {
+    display: none;
+  }
+}
+.header__center a {
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+}
+.header__center a:not(:last-child) {
+  margin-right: 14px;
+}
 .header__logo {
   text-decoration: none;
   margin-right: 41px;
 }
-.header__item {
+.header__item:not(:last-child), .header__cart {
   margin-right: 33px;
 }
 @media screen and (max-width: 375px) {
-  .header__item:nth-child(2) {
+  .header__item:not(:last-child):nth-child(2), .header__cart:nth-child(2) {
     display: none;
   }
-  .header__item:nth-child(3) {
+  .header__item:not(:last-child):nth-child(3), .header__cart:nth-child(3) {
     display: none;
   }
+}
+.header__cart {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  /* NOTE: для абсолютного позиционирования блока ...-amount */
+  position: relative;
+  width: 29px;
+  height: 29px;
+  display: block;
+}
+.header__cart img {
+  background-size: cover;
+}
+.header__cart-amount {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  top: -7px;
+  right: -14px;
+  width: 19px;
+  height: 19px;
+  color: white;
+  border-radius: 50%;
+  background: #F16D7F;
 }
 
 /**/
-/**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /**/
 .services {
   background: #222224;
@@ -193,25 +204,6 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /**/
-/**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /**/
 .footer {
   background: #222224;
@@ -348,28 +340,10 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 /* NOTE: pages */
 /**/
 /**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
-/**/
 /* NOTE: promo */
 .promo {
-  height: 764px;
+  /* NOTE: для 100% высоты экрана */
+  height: calc(100vh - 63px);
   background: #F1E4E6;
 }
 @media screen and (max-width: 800px) {
@@ -385,13 +359,23 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 100%;
 }
 .promo__image {
-  width: 394px;
+  width: 550px;
   height: 100%;
 }
 .promo__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media screen and (max-width: 800px) {
+  .promo__image img {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .promo__image img {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 375px) {
   .promo__image {
@@ -404,8 +388,15 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   padding-left: 20px;
   border-left: 12px solid #F16D7F;
 }
+@media screen and (max-width: 1024px) {
+  .promo__title {
+    max-width: 230px;
+    margin-right: 30px;
+  }
+}
 @media screen and (max-width: 800px) {
   .promo__title {
+    max-width: 377px;
     margin-right: 32px;
   }
 }
@@ -550,171 +541,134 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 
 /* NOTE: end: products */
 /**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /**/
-/* NOTE: products */
 .catalog__products {
   margin: 100px 0 100px 0;
 }
-
 .catalog__products-menu {
-  /*display: flex;*/
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
   text-align: center;
   margin-bottom: 47px;
-  /*justify-content: space-between;*/
-  /*align-items: center;*/
 }
-
+@media screen and (max-width: 1140px) {
+  .catalog__products-menu {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  .catalog__products-menu {
+    justify-content: space-between;
+  }
+}
 .catalog__products-menu_left {
   float: left;
 }
-
+@media screen and (max-width: 375px) {
+  .catalog__products-menu_left {
+    width: 40px;
+  }
+}
 .catalog__products-menu_filter {
   width: 360px;
   height: 48px;
   font-size: 17px;
   color: black;
 }
-
-/* NOTE: filter */
-.filter {
-  z-index: 50;
-  width: 120px;
-  box-sizing: border-box;
+@media screen and (max-width: 800px) {
+  .catalog__products-menu_filter {
+    width: 120px;
+  }
+}
+.catalog__products-menu_right {
+  z-index: 99;
+  width: auto;
+  margin-left: 30px;
+}
+@media screen and (max-width: 1140px) {
+  .catalog__products-menu_right {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .catalog__products-menu_right {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+  }
+}
+.catalog__products-menu_attributes {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.catalog__products-select {
   position: relative;
-  outline: none;
-  border: none;
+  width: auto;
   height: 38px;
-  line-height: 3;
-}
-
-/* NOTE: отключить треугольник */
-.filter::-webkit-details-marker {
-  display: none;
-}
-
-.filter summary {
-  display: block;
+  padding-right: 20px;
+  font-size: 14px;
   text-transform: uppercase;
-}
-
-/**/
-.filter details {
-  width: 360px;
-}
-
-.filter[open] {
-  width: 360px;
-  height: 48px;
-  padding-left: 10px;
-  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-}
-
-.filter[open] > summary {
-  width: 348px;
-  height: 48px;
-  text-align: left;
-  color: #F16D7F;
-  background-color: white;
+  color: #9F9F9F;
   border: none;
-  line-height: 3;
+  background: url("../../src/img/arrow-down.png") no-repeat right center;
+  box-sizing: border-box;
   outline: none;
+  line-height: 3;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
-
-/* NOTE: отключаем треугольник у внутренних блоков */
-.filter summary {
-  /*display: block;*/
-}
-
-.filter summary::-webkit-details-marker {
+.catalog__products-select::-webkit-details-marker {
   display: none;
 }
-
-.filter summary::before {
-  /*content: ' ';*/
+.catalog__products-select:not(:last-child) {
+  margin-right: 22px;
 }
-
-/**/
-.filter__content {
-  position: absolute;
-  left: 0;
-  width: 360px;
-  background-color: white;
-  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-}
-
-.filter__title {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-.filter__title summary {
+.catalog__products-select summary {
   display: block;
-  border-left: 10px solid #F16D7F;
-  border-bottom: 1px solid #EBEBEB;
-  padding: 10px;
+  text-transform: uppercase;
   outline: none;
 }
-
-.filter__list {
-  margin-left: 0;
-  padding-left: 33px;
+.catalog__products-select summary::-webkit-details-marker {
+  display: none;
 }
-
-.filter__item {
+.catalog__products-select[open] > summary {
+  color: #F16D7F;
+}
+.catalog__products-select_list {
+  min-width: auto;
+  height: auto;
+  margin-left: 0;
+  padding-left: 0;
+  background: white;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+.catalog__products-select_item {
   text-transform: lowercase;
   list-style-type: none;
 }
-
-.filter__item:first-letter {
+.catalog__products-select_item:first-letter {
   text-transform: uppercase;
 }
-
-.filter__item a {
+.catalog__products-select_item a {
   text-decoration: none;
   font-size: 14px;
   color: #6F6E6E;
   line-height: 2;
 }
-
-/* NOTE: end: filter */
-.catalog__products-select {
-  color: #9F9F9F;
-  text-transform: uppercase;
-  /*border: none;*/
-  /*outline: none;*/
-  /*-moz-appearance: none;*/
-  /*-webkit-appearance: none;*/
-  /*appearance: none;*/
-}
-
 .catalog__products-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  clear: both;
 }
-
-.products__pagination {
+.catalog__pagination {
   width: 284px;
   height: 44px;
   margin: 48px auto 0 auto;
@@ -722,64 +676,7 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   border-radius: 4px;
 }
 
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pagination a {
-  display: block;
-  width: 8px;
-  padding: 0 12px;
-  height: inherit;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 100;
-  line-height: 2.8;
-  text-decoration: none;
-  color: #EBEBEB;
-  transition: background-color 0.3s;
-}
-
-.pagination a:first-child {
-  color: black;
-}
-
-.pagination a:last-child {
-  color: black;
-}
-
-.pagination a.active {
-  color: #EF5B70;
-  animation: 2s testAnimation;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
-
-/* NOTE: end: products */
 /**/
-/**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /**/
 /* NOTE: product slider */
 .product__slider {
@@ -789,6 +686,11 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   background: #EAEAEA;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 740px) {
+  .product__slider {
+    height: 454px;
+  }
 }
 .product__slider-control {
   width: 47px;
@@ -814,6 +716,20 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 724px;
   margin-top: -11px;
 }
+@media screen and (max-width: 740px) {
+  .product__slider-content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 740px) {
+  .product__slider-content img {
+    width: 100%;
+  }
+}
 
 /* NOTE: end: product slider */
 /**/
@@ -823,13 +739,18 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   display: flex;
   z-index: 2;
   height: 601px;
-  margin-top: -64px;
-  margin-bottom: 128px;
+  margin-top: -64px !important;
+  margin-bottom: 128px !important;
   border: 1px solid #EAEAEA;
   background: white;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 1140px) {
+  .product__detail {
+    margin-top: 0 !important;
+  }
 }
 .product__type {
   position: relative;
@@ -866,6 +787,11 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   text-align: center;
   margin-bottom: 22px;
 }
+@media screen and (max-width: 740px) {
+  .product__description {
+    width: auto;
+  }
+}
 .product__description p {
   color: #5E5E5E;
 }
@@ -888,6 +814,12 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 1px;
   margin-left: -321px;
   background: #EAEAEA;
+}
+@media screen and (max-width: 740px) {
+  .product__price:before {
+    width: 175px;
+    margin-left: -87.5px;
+  }
 }
 .product__parameters {
   margin-top: 28px;
@@ -928,13 +860,51 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 /* NOTE: product recommended */
 .product__recommended {
   width: 100%;
-  height: auto;
-  margin-bottom: 128px;
+  height: 581px;
+  margin-bottom: 128px !important;
+}
+@media screen and (max-width: 1140px) {
+  .product__recommended {
+    width: 768px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .product__recommended {
+    width: auto;
+    height: 100%;
+  }
 }
 .product__recommended-wrapper {
   display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
   gap: 30px;
-  justify-content: center;
+}
+@media screen and (max-width: 1140px) {
+  .product__recommended-wrapper {
+    display: block;
+    width: 768px;
+    height: 581px;
+    overflow: hidden;
+  }
+  .product__recommended-wrapper .products__item {
+    float: left;
+  }
+  .product__recommended-wrapper .products__item:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .product__recommended-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    flex-direction: column;
+  }
 }
 .product__video video {
   width: 360px;
@@ -954,8 +924,23 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   align-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1140px) {
+  .cart__wrapper {
+    flex-direction: column;
+  }
+}
 .cart__left {
   width: 652px;
+}
+@media screen and (max-width: 1140px) {
+  .cart__left {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 57px;
+    flex-direction: column;
+  }
 }
 .cart__product {
   width: 652px;
@@ -963,30 +948,67 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   margin-bottom: 40px;
   box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
 }
+@media screen and (max-width: 740px) {
+  .cart__product {
+    width: 358px;
+    min-height: 188px;
+  }
+}
 .cart__product-info {
   float: left;
   margin-top: 22px;
+}
+@media screen and (max-width: 740px) {
+  .cart__product-info {
+    width: 143px;
+    height: 143px;
+  }
 }
 .cart__product-image, .cart__product-image img {
   float: left;
   width: 262px;
   height: 306px;
 }
+@media screen and (max-width: 740px) {
+  .cart__product-image, .cart__product-image img {
+    width: 143px;
+    height: 188px;
+  }
+}
 .cart__product-title {
   width: 262px;
   min-height: 58px;
-  margin-left: 30px;
+  margin-left: 28px;
   margin-bottom: 42px;
+}
+@media screen and (max-width: 740px) {
+  .cart__product-title {
+    width: 123px;
+    min-height: 35px;
+    margin-bottom: 26px;
+  }
 }
 .cart__product-title p {
   font-size: 24px;
 }
+@media screen and (max-width: 740px) {
+  .cart__product-title p {
+    font-size: 16px;
+  }
+}
 .cart__product-details {
   width: 166px;
   min-height: 122px;
-  margin-left: 30px;
+  margin-left: 28px;
   font-size: 22px;
   color: #656565;
+}
+@media screen and (max-width: 740px) {
+  .cart__product-details {
+    width: 120px;
+    min-height: 75px;
+    font-size: 14px;
+  }
 }
 .cart__product-details p:not(:last-child) {
   margin-top: 6px;
@@ -999,6 +1021,14 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 25px;
   text-align: center;
   color: #656565;
+}
+@media screen and (max-width: 740px) {
+  .cart__product-details_quantity input {
+    width: 24px;
+    height: 15px;
+    margin-top: 4px;
+    font-size: 10px;
+  }
 }
 .cart__product-close {
   float: right;
@@ -1018,6 +1048,16 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   height: 50px;
   margin-top: 72px;
 }
+@media screen and (max-width: 1140px) {
+  .cart__product-buttons {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 740px) {
+  .cart__product-buttons {
+    margin-top: 30px;
+  }
+}
 .cart__product-buttons a {
   width: 225px;
   height: inherit;
@@ -1026,6 +1066,18 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   color: #656565;
   border: 1px solid #A4A4A4;
   line-height: 3;
+}
+@media screen and (max-width: 1140px) {
+  .cart__product-buttons a:not(:last-child) {
+    margin-right: 48px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .cart__product-buttons a {
+    width: 175px;
+    height: 33px;
+    font-size: 12px;
+  }
 }
 .cart__right {
   display: flex;
@@ -1036,10 +1088,31 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   min-height: 541px;
   flex-direction: column;
 }
+@media screen and (max-width: 1140px) {
+  .cart__right {
+    display: block;
+    width: 733px;
+    min-height: 280px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .cart__right {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
 .cart__feedback {
   width: 360px;
   min-height: 272px;
   margin-bottom: 58px;
+}
+@media screen and (max-width: 1140px) {
+  .cart__feedback {
+    float: left;
+  }
 }
 .cart__feedback-title {
   margin-bottom: 20px;
@@ -1072,6 +1145,17 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   min-height: 214px;
   background: #F5F3F3;
   flex-direction: column;
+}
+@media screen and (max-width: 1140px) {
+  .cart__summary {
+    float: right;
+    margin-top: 48px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .cart__summary {
+    margin-top: 0;
+  }
 }
 .cart__summary-price {
   height: 82px;
@@ -1130,9 +1214,22 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   align-content: center;
   align-items: center;
 }
+@media screen and (max-width: 740px) {
+  .registration__wrapper {
+    flex-direction: column;
+  }
+}
 .registration__left {
   width: 460px;
   min-height: 460px;
+}
+@media screen and (max-width: 740px) {
+  .registration__left {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
 }
 .registration__form-address {
   height: 149px;
@@ -1165,6 +1262,9 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   font-size: 11px;
   font-weight: 100;
 }
+.registration__form-details {
+  width: 359px;
+}
 .registration__form-details p {
   font-size: 13px;
 }
@@ -1187,11 +1287,28 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   align-items: center;
   width: 650px;
   min-height: 350px;
+  margin-top: -160px;
   flex-direction: column;
+}
+@media screen and (max-width: 800px) {
+  .registration__right {
+    width: 354px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .registration__right {
+    margin-top: 40px;
+  }
 }
 .registration__info-font {
   font-size: 24px;
   font-weight: 100;
+}
+@media screen and (max-width: 1140px) {
+  .registration__info-font {
+    width: 354px;
+    font-size: 16px;
+  }
 }
 .registration__info h2 {
   margin-bottom: 22px;
@@ -1201,6 +1318,7 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
   margin-bottom: 22px;
 }
 .registration__info ul li {
+  display: flex;
   margin-bottom: 19px;
   list-style-type: none;
 }
@@ -1211,25 +1329,6 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 /* NOTE: end: pages */
 /**/
 /* NOTE: ui-kit */
-/**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /* NOTE: создаем анимацию */
 @keyframes leftAnimation {
   /* NOTE: конечная позиция */
@@ -1301,6 +1400,7 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 .breadcrumb__wrapper {
   display: flex;
+  width: auto;
   height: 100%;
   justify-content: space-between;
   align-items: center;
@@ -1330,25 +1430,6 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /**/
-/**/
-.container {
-  /* NOTE: ширина по макету 1140px но задавать ВСЕГДА на +20px больше! */
-  max-width: 1140px;
-  /* NOTE: для старых браузеров */
-  width: 100%;
-  margin: 0 auto;
-  /* NOTE: up & down, left & right - тут 20px (10+10)  компенсируются отступами */
-  padding: 0 10px;
-}
-@media screen and (max-width: 800px) {
-  .container {
-    max-width: inherit;
-    width: inherit;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-
 /**/
 /**/
 .products__item {
@@ -1439,6 +1520,303 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 }
 
 /* NOTE: end: products */
+/**/
+/**/
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.pagination a {
+  display: block;
+  width: 8px;
+  padding: 0 12px;
+  height: inherit;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 2.8;
+  text-decoration: none;
+  color: #EBEBEB;
+  transition: background-color 0.3s;
+}
+
+.pagination a:first-child {
+  color: black;
+}
+
+.pagination a:last-child {
+  color: black;
+}
+
+.pagination a.active {
+  color: #F16D7F;
+  animation: 2s testAnimation;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+/**/
+.filter {
+  z-index: 50;
+  width: 120px;
+  box-sizing: border-box;
+  position: relative;
+  outline: none;
+  border: none;
+  height: 38px;
+  line-height: 3;
+  /* NOTE: отключить треугольник */
+  /**/
+}
+@media screen and (max-width: 800px) {
+  .filter {
+    width: 120px;
+  }
+}
+.filter[open] > summary {
+  color: #F16D7F;
+}
+.filter::-webkit-details-marker {
+  display: none;
+}
+.filter summary {
+  display: block;
+  text-transform: uppercase;
+  outline: none;
+}
+.filter summary::-webkit-details-marker {
+  display: none;
+}
+@media screen and (max-width: 375px) {
+  .filter summary span {
+    display: none;
+  }
+}
+.filter details {
+  width: 360px;
+}
+.filter details[open] > summary {
+  color: #F16D7F;
+}
+.filter[open] {
+  width: 360px;
+  height: 48px;
+  padding-left: 10px;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+.filter > summary {
+  width: 348px;
+  height: 48px;
+  text-align: left;
+  background-color: white;
+  border: none;
+  line-height: 3;
+  outline: none;
+}
+.filter__content {
+  position: absolute;
+  left: 0;
+  width: 360px;
+  background-color: white;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+.filter__title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.filter__title summary {
+  display: block;
+  border-left: 10px solid #F16D7F;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 10px;
+  outline: none;
+}
+.filter__list {
+  margin-left: 0;
+  padding-left: 33px;
+}
+.filter__item {
+  text-transform: lowercase;
+  list-style-type: none;
+}
+.filter__item:first-letter {
+  text-transform: uppercase;
+}
+.filter__item a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #6F6E6E;
+  line-height: 2;
+}
+
+/**/
+/**/
+.burger {
+  width: 32px;
+  height: 32px;
+  padding-top: 8px;
+  font-size: 16px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  /* NOTE: checked status look in /js/burger.js */
+}
+.burger__wrapper {
+  width: 32px;
+  height: 32px;
+  margin-right: 33px;
+  overflow: hidden;
+}
+.burger span {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: block;
+  width: 23px;
+  height: 2px;
+  text-align: center;
+  margin: 6px 0 3px 3px;
+  background-color: white;
+}
+.burger__toggle {
+  display: none;
+  /**
+  NOTE:
+  Этот селектор означает, что стиль применяется только к параграфам,
+  непосредственно следуя за другим абзацем.
+  Простой селектор p применил бы стиль к каждому абзацу на странице.
+   */
+}
+.burger__toggle:checked + .burger__menu {
+  opacity: 1;
+  transition: all ease-in 0.3s;
+  color: #6F6E6E;
+  background: white;
+}
+.burger__menu {
+  position: absolute;
+  right: 0;
+  top: 75px;
+  height: calc(100vh - 63px);
+  margin: 0;
+  padding: 1%;
+  opacity: 0;
+  overflow-y: scroll;
+}
+
+/**/
+.nav__menu {
+  width: 232px;
+  padding: 20px;
+}
+.nav__wrapper {
+  position: relative;
+}
+.nav__close {
+  position: absolute;
+  top: -25px;
+  right: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.nav__title {
+  margin-top: 27px;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+.nav__heading {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 100;
+  color: #F16D7F;
+}
+.nav__item {
+  margin-top: 12px;
+  margin-left: 21px;
+  list-style: none;
+}
+.nav__item a {
+  font-size: 14px;
+  font-weight: 100;
+  text-decoration: none;
+  color: #6F6E6E;
+}
+
+/* NOTE: аналог if / else в JS -> burger.js */
+/*
+#burger:checked ˜.nav__menu {
+  opacity: 1;
+}
+
+#burger:not(:checked) ˜.nav__menu {
+  opacity: 0;
+}
+*/
+/**/
+/**/
+/**/
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.checkbox .checkbox-label {
+  position: relative;
+  display: block;
+  height: 10px;
+  width: 24px;
+  border-radius: 100px;
+  background: #EBEBEB;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.checkbox .checkbox-label:after {
+  position: absolute;
+  content: "";
+  left: -2px;
+  top: -4px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 100px;
+  background: white;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+  transition: all 300ms ease;
+}
+.checkbox .checkbox-label:active:after {
+  transform: scale(1.15, 0.85);
+}
+.checkbox .checkbox-input {
+  display: none;
+}
+.checkbox .checkbox-input:checked ~ label {
+  background: #F16D7F;
+}
+.checkbox .checkbox-input:checked ~ label:after {
+  left: 8px;
+  background: #ea2742;
+}
+.checkbox p {
+  margin-left: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
 /* NOTE: end: ui-kit */
 
 /*# sourceMappingURL=style.css.map */

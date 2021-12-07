@@ -8,6 +8,7 @@ sass --watch src/sass/styles.scss:src/css/_style.css
 
 
 @import "general-mixins";
+@import "settings";
 
 
 /**/
@@ -77,4 +78,8 @@ ui-kit - отдельные (готовые) елементы (блоки) са�
 /* NOTE: ui-kit */
 @import "ui-kit/breadcrumb/breadcrumb";
 @import "ui-kit/product/product";
+@import "ui-kit/pagination/pagination";
+@import "ui-kit/filter/filter";
+@import "ui-kit/burger/burger";
+@import "ui-kit/checkbox/checkbox";
 /* NOTE: end: ui-kit */

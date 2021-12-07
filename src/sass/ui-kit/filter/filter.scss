@@ -1,0 +1,117 @@
+@import "../../settings";
+
+
+/**/
+
+
+.filter {
+  z-index: 50;
+  width: 120px;
+  box-sizing: border-box;
+  position: relative;
+  outline: none;
+  border: none;
+  height: 38px;
+  line-height: 3;
+
+  @media screen and (max-width: $tabletWidth) {
+    width: 120px;
+  }
+
+  &[open] > summary {
+    color: $colorRed;
+  }
+
+
+  /* NOTE: отключить треугольник */
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  & summary {
+    display: block;
+    text-transform: uppercase;
+    outline: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      & span {
+        display: none;
+      }
+    }
+  }
+  /**/
+
+
+  & details {
+    width: 360px;
+
+    &[open] > summary {
+      color: $colorRed;
+    }
+  }
+
+  &[open] {
+    width: 360px;
+    height: 48px;
+    padding-left: 10px;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  }
+
+  & > summary {
+    width: 348px;
+    height: 48px;
+    text-align: left;
+    background-color: white;
+    border: none;
+    line-height: 3;
+    outline: none;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    width: 360px;
+    background-color: white;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  }
+
+  &__title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: left;
+
+    & summary {
+      display: block;
+      border-left: 10px solid $colorRed;
+      border-bottom: 1px solid #EBEBEB;
+      padding: 10px;
+      outline: none;
+    }
+  }
+
+  &__list {
+    margin-left: 0;
+    padding-left: 33px;
+  }
+
+  &__item {
+    text-transform: lowercase;
+    list-style-type: none;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    & a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #6F6E6E;
+      line-height: 2;
+    }
+  }
+}

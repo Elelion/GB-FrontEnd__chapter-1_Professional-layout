@@ -1,4 +1,4 @@
-@import "../../components/general/general";
+@import "../../settings";
 
 
 /* NOTE: создаем анимацию */
@@ -94,6 +94,7 @@
 
   &__wrapper {
     display: flex;
+    width: auto;
     height: 100%;
     justify-content: space-between;
     align-items: center;

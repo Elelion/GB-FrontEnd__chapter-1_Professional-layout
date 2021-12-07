@@ -1,5 +1,5 @@
 @import "../../general-mixins";
-@import "../../components/general/general";
+@import "../../settings";
 
 
 /**/
@@ -7,7 +7,8 @@
 
 /* NOTE: promo */
 .promo {
-  height: 764px;
+  /* NOTE: для 100% высоты экрана */
+  height: calc(100vh - 63px);
   background: #F1E4E6;
 
   @media screen and (max-width: $tabletWidth) {
@@ -21,13 +22,21 @@
   }
 
   &__image {
-    width: 394px;
+    width: 550px;
     height: 100%;
 
     & img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      @media screen and (max-width: $tabletWidth) {
+        width: 80%;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: 100%;
+      }
     }
 
     @media screen and (max-width: $mobileWidth) {
@@ -41,7 +50,13 @@
     padding-left: 20px;
     border-left: 12px solid $colorRed;
 
+    @media screen and (max-width: 1024px) {
+      max-width: 230px;
+      margin-right: 30px;
+    }
+
     @media screen and (max-width: $tabletWidth) {
+      max-width: 377px;
       margin-right: 32px;
     }
 
