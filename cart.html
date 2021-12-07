@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="src/css/style.css">
+
+  <!-- NOTE: additional lib's -->
+
+  <!-- NOTE: используется когда макет сделан на fontawesome
+   если в макете лишь пару иконок то проще скачать из SVG и рендерить
+   чем подключать всю библиотеку, тк она оч тяжелая, в данном примере
+   мы испольщуем его только для футера в обучающих целях -->
+  <script src="https://kit.fontawesome.com/905c41fdf2.js"
+          crossorigin="anonymous">
+  </script>
+
+  <title>Title</title>
+</head>
+<body>
+  <header class="header">
+  <div class="container header__wrapper">
+    <nav class="header__left">
+      <a href="index.html" class="header__logo">
+        <img src="src/img/logo.png" alt="">
+      </a>
+      <img src="src/img/search.png" alt="">
+    </nav>
+
+    <nav class="header__center">
+      <a href="index.html">Гл</a>
+      <a href="catalog.html">Кат</a>
+      <a href="product.html">Прод</a>
+      <a href="cart.html">Кор</a>
+      <a href="registration.html">Рег</a>
+    </nav>
+
+    <nav class="header__right">
+
+      <div class="burger__wrapper">
+        <label for="toggle" class="burger">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </label>
+        <input type="checkbox" class="burger__toggle" id="toggle">
+
+        <nav class="burger__menu nav__menu">
+          <div class="nav__wrapper">
+            <label for="toggle" class="nav__close" id="burger"><i class="fas fa-times"></i></label>
+            <h2 class="nav__title">MENU</h2>
+
+            <h3 class="nav__heading">MAN</h3>
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Bags</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Denim</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+            </ul>
+
+            <h3 class="nav__heading">WOMAN</h3>
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Jackets & Coats</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Polos</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Shirts</a></li>
+            </ul>
+
+            <h3 class="nav__heading">KIDS</h3>
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Jackets & Coats</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Polos</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Shirts</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Bags</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+
+      <img class="header__item" src="src/img/login.png" alt="">
+
+      <div class="header__cart">
+        <img src="src/img/cart.png" class="header__item" alt="">
+        <div class="header__cart-amount">5</div>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+  <!-- ** -->
+
+  <main>
+    <section class="breadcrumb__chapter">
+      <div class="container breadcrumb__wrapper">
+        <div class="breadcrumb__left">
+          <h1>SHOPPING CART</h1>
+        </div>
+
+        <div class="breadcrumb__right">
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+
+
+    <!-- ** -->
+
+    <section class="cart">
+      <div class="cart__wrapper container">
+
+        <div class="cart__left">
+
+          <div class="cart__product">
+            <div class="cart__product-image">
+              <img src="src/img/product-3.jpeg" alt="">
+            </div>
+
+            <div class="cart__product-info">
+              <div class="cart__product-title">
+                <p>MANGO  PEOPLE  T-SHIRT</p>
+              </div>
+
+              <div class="cart__product-details">
+                <p class="cart__product-detail_price">Price: <span>$300</span></p>
+                <p class="cart__product-details_color">Color: Red</p>
+                <p class="cart__product-details_size">Size: XI</p>
+                <p class="cart__product-details_quantity">
+                  Quantity:
+                  <input type="text"
+                         value="0"
+                         placeholder="кол-во">
+                </p>
+              </div>
+            </div>
+            <div class="cart__product-close">
+              <a href="#">&#215;</a>
+            </div>
+          </div>
+
+          <div class="cart__product">
+            <div class="cart__product-image">
+              <img src="src/img/product-3.jpeg" alt="">
+            </div>
+
+            <div class="cart__product-info">
+              <div class="cart__product-title">
+                <p>MANGO  PEOPLE  T-SHIRT</p>
+              </div>
+
+              <div class="cart__product-details">
+                <p class="cart__product-detail_price">Price: <span>$300</span></p>
+                <p class="cart__product-details_color">Color: Red</p>
+                <p class="cart__product-details_size">Size: XI</p>
+                <p class="cart__product-details_quantity">
+                  Quantity:
+                  <input type="text"
+                         value="0"
+                         placeholder="кол-во">
+                </p>
+              </div>
+            </div>
+            <div class="cart__product-close">
+              <a href="#">&#215;</a>
+            </div>
+          </div>
+
+          <div class="cart__product-buttons">
+            <a href="#">CLEAR SHOPPING CART</a>
+            <a href="#">CONTINUE SHOPPING</a>
+          </div>
+        </div>
+
+        <!-- ** -->
+
+        <div class="cart__right">
+          <div class="cart__feedback">
+            <div class="cart__feedback-title">
+              <h1>Shipping address</h1>
+            </div>
+
+            <div class="cart__feedback-address">
+              <input type="text" placeholder="Bangladesh" value="">
+              <input type="text" placeholder="State" value="">
+              <input type="text" placeholder="Postcode / Zip" value="">
+            </div>
+
+            <div class="cart__feedback-button">
+              <button>Get a quote</button>
+            </div>
+          </div>
+
+          <div class="cart__summary">
+            <div class="cart__summary-price">
+              <p>SUB TOTAL <span>$900</span></p>
+              <p>GRAND TOTAL <span class="cart__summary-price_red">$900</span></p>
+            </div>
+
+            <div class="cart__summary-button">
+              <button>PROCEED TO CHECKOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ** -->
+
+  <footer class="footer">
+    <section class="footer__subscribe">
+      <div class="footer__subscribe-wrapper container">
+        <div class="footer__subscribe-left">
+          <img src="src/img/subscribe-1.png" alt="">
+          <p class="footer__subscribe-description">“Vestibulum quis porttitor dui!
+            Quisque viverra nunc mi, a pulvinar purus condimentum“</p>
+        </div>
+        <div class="footer__subscribe-right">
+          <p class="footer__subscribe-description"><span>SUBSCRIBE</span>
+            FOR OUR NEWLETTER AND PROMOTION</p>
+
+          <div class="footer__subscribe_right-subscribe">
+            <form action="#" method="POST" class="footer__subscribe-form">
+              <input type="email"
+                     value=""
+                     placeholder="Enter Your Email"
+                     autofocus
+                     required
+                     pattern="\S+[А-яа-я]"
+                     class="footer__subscribe_search-input">
+
+              <input type="submit"
+                     value="Search"
+                     class="footer__subscribe_search-btn">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <div class="footer__copyright container">
+      <div class="footer__copyright-left">
+        <p>© 2021  Brand  All Rights Reserved.</p>
+      </div>
+
+      <div class="footer__copyright-right">
+        <a href="#" class="footer__copyright-facebook footer__social">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-instagram footer__social">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-twitter footer__social">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-p footer__social">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+      </div>
+    </div>
+
+  </footer>
+</body>
+</html>

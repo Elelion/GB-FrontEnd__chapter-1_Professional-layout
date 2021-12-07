@@ -1,0 +1,96 @@
+@import "../../general-mixins";
+@import "../../settings";
+
+
+/**/
+
+
+.header {
+  height: 75px;
+  background: #222222;
+
+  &__wrapper {
+    @include flexCenterBlock(space-between);
+
+    height: inherit;
+  }
+
+  &__right {
+    @include flexCenterBlock(space-between);
+
+    margin-right: 20px;
+  }
+
+  &__center {
+    @media screen and (max-width: $tabletWidth) {
+      display: none;
+    }
+
+    & a {
+      font-size: 14px;
+      text-decoration: none;
+      color: white;
+    }
+
+    & a:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+
+  &__left {
+
+  }
+
+  &__logo {
+    text-decoration: none;
+    margin-right: 41px;
+  }
+
+  /* NOTE: задать всем елементам КРОМЕ последнего.... */
+  &__item:not(:last-child), &__cart {
+    margin-right: 33px;
+
+    @media screen and (max-width: $mobileWidth) {
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
+  &__cart {
+    @include userSelectDisabled();
+
+    /* NOTE: для абсолютного позиционирования блока ...-amount */
+    position: relative;
+    width: 29px;
+    height: 29px;
+
+    display: block;
+
+    & img {
+      background-size: cover;
+    }
+
+    &-amount {
+      @include flexCenterBlock();
+
+      position: absolute;
+      top: -7px;
+      right: -14px;
+      width: 19px;
+      height: 19px;
+      color: white;
+      border-radius: 50%;
+      background: $colorRed;
+    }
+  }
+}
+
+
+
+
+

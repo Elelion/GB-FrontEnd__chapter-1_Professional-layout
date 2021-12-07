@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="src/css/style.css">
+
+  <!-- NOTE: additional lib's -->
+
+  <!-- NOTE: используется когда макет сделан на fontawesome
+   если в макете лишь пару иконок то проще скачать из SVG и рендерить
+   чем подключать всю библиотеку, тк она оч тяжелая, в данном примере
+   мы испольщуем его только для футера в обучающих целях -->
+  <script src="https://kit.fontawesome.com/905c41fdf2.js"
+          crossorigin="anonymous">
+  </script>
+
+  <title>Title</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__wrapper">
+      <nav class="header__left">
+        <a href="index.html" class="header__logo">
+          <img src="src/img/logo.png" alt="">
+        </a>
+        <img src="src/img/search.png" alt="">
+      </nav>
+
+      <nav class="header__center">
+        <a href="index.html">Гл</a>
+        <a href="catalog.html">Кат</a>
+        <a href="product.html">Прод</a>
+        <a href="cart.html">Кор</a>
+        <a href="registration.html">Рег</a>
+      </nav>
+
+      <nav class="header__right">
+
+        <div class="burger__wrapper">
+          <label for="toggle" class="burger">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </label>
+          <input type="checkbox" class="burger__toggle" id="toggle">
+
+          <nav class="burger__menu nav__menu">
+            <div class="nav__wrapper">
+              <label for="toggle" class="nav__close" id="burger"><i class="fas fa-times"></i></label>
+              <h2 class="nav__title">MENU</h2>
+
+              <h3 class="nav__heading">MAN</h3>
+              <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Bags</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Denim</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+              </ul>
+
+              <h3 class="nav__heading">WOMAN</h3>
+              <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Jackets & Coats</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Polos</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Shirts</a></li>
+              </ul>
+
+              <h3 class="nav__heading">KIDS</h3>
+              <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Jackets & Coats</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Polos</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Shirts</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Bags</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+
+        <img class="header__item" src="src/img/login.png" alt="">
+
+        <div class="header__cart">
+          <img src="src/img/cart.png" class="header__item" alt="">
+          <div class="header__cart-amount">5</div>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ** -->
+
+  <main>
+    <section class="promo">
+      <div class="container promo__wrapper">
+        <div class="promo__image">
+          <img src="src/img/man.png" alt="">
+        </div>
+        <div class="promo__title">
+          <h1>
+            <span class="promo__decor-title">THE BRAND</span>
+            <br>
+            <span class="promo__decor-subtitle">OF LUXERIOUS <span class="promo__decor-red">FASHION</span></span>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <section class="category">
+      <div class="container">
+        <div class="category__wrapper">
+
+          <div class="category__item">
+            <div class="category__mask">
+              <div class="category__block">
+                <p>30% off</p>
+                <p>for woman</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="category__item">
+            <div class="category__mask">
+              <div class="category__block">
+                <p>hot deal</p>
+                <p>for men</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="category__item">
+            <div class="category__mask">
+              <div class="category__block">
+                <p>new arrivals</p>
+                <p>for kids</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="category__item">
+            <div class="category__mask">
+              <div class="category__block">
+                <p>luxirous & trendy</p>
+                <p>accesories</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <section class="products">
+      <div class="container">
+        <div class="products__chapter">
+          <h2>Fetured Items</h2>
+          <p>Shop for items based on what we featured in this week</p>
+        </div>
+
+        <div class="products__wrapper">
+          <div class="products__item">
+            <div class="products__img">
+              <img src="src/img/product-1.jpeg"/>
+            </div>
+
+            <div class="products__overlay">
+              <button>Add to Cart</button>
+            </div>
+
+            <div class="products__info">
+              <p class="products__title">
+                ELLERY X M'O CAPSULE
+              </p>
+
+              <p class="products__description">
+                Known for her sculptural takes on traditional tailoring,
+                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+              </p>
+
+              <p class="products__price">
+                $52.00
+              </p>
+            </div>
+          </div>
+
+          <div class="products__item">
+            <div class="products__img">
+              <img src="src/img/product-2.jpeg"/>
+            </div>
+
+            <div class="products__overlay">
+              <button>Add to Cart</button>
+            </div>
+
+            <div class="products__info">
+              <p class="products__title">
+                ELLERY X M'O CAPSULE
+              </p>
+
+              <p class="products__description">
+                Known for her sculptural takes on traditional tailoring,
+                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+              </p>
+
+              <p class="products__price">
+                $52.00
+              </p>
+            </div>
+          </div>
+
+          <div class="products__item">
+            <div class="products__img">
+              <img src="src/img/product-3.jpeg"/>
+            </div>
+
+            <div class="products__overlay">
+              <button>Add to Cart</button>
+            </div>
+
+            <div class="products__info">
+              <p class="products__title">
+                ELLERY X M'O CAPSULE
+              </p>
+
+              <p class="products__description">
+                Known for her sculptural takes on traditional tailoring,
+                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+              </p>
+
+              <p class="products__price">
+                $52.00
+              </p>
+            </div>
+          </div>
+
+          <div class="products__item">
+            <div class="products__img">
+              <img src="src/img/product-4.jpeg"/>
+            </div>
+
+            <div class="products__overlay">
+              <button>Add to Cart</button>
+            </div>
+
+            <div class="products__info">
+              <p class="products__title">
+                ELLERY X M'O CAPSULE
+              </p>
+
+              <p class="products__description">
+                Known for her sculptural takes on traditional tailoring,
+                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+              </p>
+
+              <p class="products__price">
+                $52.00
+              </p>
+            </div>
+          </div>
+
+          <div class="products__item">
+            <div class="products__img">
+              <img src="src/img/product-5.jpeg"/>
+            </div>
+
+            <div class="products__overlay">
+              <button>Add to Cart</button>
+            </div>
+
+            <div class="products__info">
+              <p class="products__title">
+                ELLERY X M'O CAPSULE
+              </p>
+
+              <p class="products__description">
+                Known for her sculptural takes on traditional tailoring,
+                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+              </p>
+
+              <p class="products__price">
+                $52.00
+              </p>
+            </div>
+          </div>
+
+          <div class="products__item">
+            <div class="products__img">
+              <img src="src/img/product-6.jpeg"/>
+            </div>
+
+            <div class="products__overlay">
+              <button>Add to Cart</button>
+            </div>
+
+            <div class="products__info">
+              <p class="products__title">
+                ELLERY X M'O CAPSULE
+              </p>
+
+              <p class="products__description">
+                Known for her sculptural takes on traditional tailoring,
+                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+              </p>
+
+              <p class="products__price">
+                $52.00
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="products__button">
+          <a href="#">Browse All Product</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <section class="services">
+      <div class="services__wrapper container">
+        <div class="services__item">
+          <img src="src/img/services-1.png" alt="" class="services__img">
+          <h3 class="services__title">Free Delivery</h3>
+          <p class="services__description">Worldwide delivery on all.
+            Authorit tively morph next-generation innov tion with extensive models.</p>
+        </div>
+
+        <div class="services__item">
+          <img src="src/img/services-2.png" alt="" class="services__img">
+          <h3 class="services__title">Sales & discounts</h3>
+          <p class="services__description">Worldwide delivery on all.
+            Authorit tively morph next-generation innov tion with extensive models.</p>
+        </div>
+
+        <div class="services__item">
+          <img src="src/img/services-3.png" alt="" class="services__img">
+          <h3 class="services__title">Quality assurance</h3>
+          <p class="services__description">Worldwide delivery on all.
+            Authorit tively morph next-generation innov tion with extensive models.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ** -->
+
+  <footer class="footer">
+    <section class="footer__subscribe">
+      <div class="footer__subscribe-wrapper container">
+        <div class="footer__subscribe-left">
+          <img src="src/img/subscribe-1.png" alt="">
+          <p class="footer__subscribe-description">“Vestibulum quis porttitor dui!
+            Quisque viverra nunc mi, a pulvinar purus condimentum“</p>
+        </div>
+        <div class="footer__subscribe-right">
+          <p class="footer__subscribe-description"><span>SUBSCRIBE</span>
+            FOR OUR NEWLETTER AND PROMOTION</p>
+
+          <div class="footer__subscribe_right-subscribe">
+            <form action="#" method="POST" class="footer__subscribe-form">
+              <input type="email"
+                     value=""
+                     placeholder="Enter Your Email"
+                     autofocus
+                     required
+                     pattern="\S+[A-zz-z]"
+                     class="footer__subscribe_search-input">
+
+              <input type="submit"
+                     value="Search"
+                     class="footer__subscribe_search-btn">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <div class="footer__copyright container">
+      <div class="footer__copyright-left">
+        <p>© 2021  Brand  All Rights Reserved.</p>
+      </div>
+
+      <div class="footer__copyright-right">
+        <a href="#" class="footer__copyright-facebook footer__social">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-instagram footer__social">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-twitter footer__social">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-p footer__social">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="src/js/burger.js"></script>
+</body>
+</html>
+
+<!--
+
+NOTE:
+
+простой лайфхак слайдер:
+
+<div class="one">
+  <div class="two" style="width: 70%;"></div>
+</div>
+
+-
+
+.one {
+  width: 300px;
+  height: 50px;
+  outline: 1px solid green;
+  border-right: 10px;
+}
+
+.two {
+  height: 50px;
+  border-radius: 10px;
+  background: green;
+}
+
+---
+
+Полезные теги:
+
+---
+
+<details class="test">
+  <summary>test</summary>
+  <p>Lorem ipsum dolor...</p>
+</details>
+
+.test[open] summary {...}
+
+.test[open] {
+  background: green;
+}
+
+---
+
+Комбинированый список, используется в формах
+
+<fieldset>
+    <legend>Контактная информация</legend>
+      <label for="name">Фамилия <em>*</em></label>
+      <input id="name"><br>
+      <label for="name">Имя <em>*</em></label>
+      <input id="name"><br>
+      <label for="name">Отчество</label>
+      <input id="name"><br>
+      <label for="telephone">Телефон <em>*</em></label>
+      <input id="telephone"><br>
+      <label for="email">Email <em>*</em></label>
+      <input id="email"><br>
+  </fieldset>
+<fieldset>
+
+---
+
+Регулярки
+
+[A-Z]{3}-[0-9]{3}
+Квадратные скобки в начале строки определяют диапазон допустимых символов.
+Иными словами, группа [A-Z] разрешает любые прописные буквы от А до Z.
+Следующая за ней часть в фигурных скобках указывает множитель,
+т.е. {3} означает, что нужны три прописные буквы. Следующее тире не имеет
+никакого специального значения и означает само себя, т.е. указывает, что
+после трех прописных букв должно быть тире. Наконец, [0-9] означает цифры
+в диапазоне от 0 до 9, а {3} требует три таких цифры.
+
+---
+
+Прогрессы
+
+<progress value="0.25"></progress>
+<progress value="50" max="200"></progress>
+<meter min="5" max="70" value="28"> 28 метров</meter>
+
+---
+
+figure - HTML-элемент <figure> (Иллюстрация с необязательной подписью)
+представляет самостоятельный контент, часто с подписью
+(заголовком), которая указывается с помощью элемента (<figcaption>).
+Диаграмма и её подпись представляет собой единое целое.
+
+<figure>
+    <img src="/media/cc0-images/elephant-660-480.jpg"
+         alt="Elephant at sunset">
+    <figcaption>An elephant at sunset</figcaption>
+</figure>
+
+-->
