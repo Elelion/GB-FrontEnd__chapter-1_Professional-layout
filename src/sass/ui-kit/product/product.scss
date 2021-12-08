@@ -1,0 +1,115 @@
+@import "../../general-mixins";
+@import "../../settings";
+
+
+/**/
+
+
+$productWidthImg: 360px;
+$productHeightImg: 420px;
+
+
+/**/
+
+
+.products {
+  &__item {
+    /*
+    NOTE:
+    если у родителя значение position установлено как static или родителя нет,
+    то отсчет координат ведется от края окна браузера. Если у родителя
+    значение position задано как fixed, relative или absolute, то отсчет
+    координат ведется от края родительского элемента.
+    */
+    position: relative;
+    width: $productWidthImg;
+    height: 581px;
+    background: #F8F8F8;
+    overflow: hidden;
+
+    &:hover .products__overlay {
+      opacity: 1;
+
+      /*
+      NOTE:
+      transform: rotate(360deg); - крутить по часовой
+      transform: rotate(-360deg); - крутить против часовой
+      transform: rotateX(360deg); - крутить по оси Х
+      transform: rotateY(360deg); - крутить по оси Y
+
+
+      */
+      transform: rotate(360deg);
+    }
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  &__img img, &__video video {
+    width: $productWidthImg;
+    height: $productHeightImg;
+  }
+
+  &__overlay {
+    @include flexCenterBlock();
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $productWidthImg;
+    height: $productHeightImg;
+    background-color: rgba(58, 56, 56, 0.83);
+    opacity: 0;
+
+    /* NOTE: можно задавать конкретные елементы: transition: color 2s, background 5s; */
+    transition: 0.5s ease-in;
+
+    & button {
+      width: 139px;
+      height: 44px;
+      font-size: 14px;
+      border: 1px solid white;
+      background: none;
+      color: white;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.3);
+        border-radius: 50%;
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  &__info {
+    @include flexCenterBlock(space-between);
+
+    width: 314px;
+    min-height: 116px;
+    margin: 26px auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #5D5D5D;
+  }
+
+  &__price {
+    font-size: 16px;
+    color: $colorRed;
+  }
+}
+/* NOTE: end: products */

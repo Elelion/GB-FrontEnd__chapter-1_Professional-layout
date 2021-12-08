@@ -1,0 +1,260 @@
+@import "../../general-mixins";
+@import "../../settings";
+
+
+/**/
+
+
+/* NOTE: product slider */
+.product__slider {
+  display: flex;
+  width: 100%;
+  height: 777px;
+  background: #EAEAEA;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 740px) {
+    height: 454px;
+  }
+
+  &-control {
+    width: 47px;
+    height: 47px;
+    font-size: 27px;
+    background: rgba(42, 42, 42, 0.15);
+
+    & a {
+      display: block;
+      width: inherit;
+      height: inherit;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      line-height: 1.7;
+    }
+
+    & a:hover {
+      color: $colorRed;
+    }
+  }
+
+  &-content {
+    z-index: 1;
+    width: 597px;
+    height: 724px;
+    margin-top: -11px;
+
+    @media screen and (max-width: 740px) {
+      @include flexCenterBlock();
+
+      height: 100%;
+    }
+
+    & img {
+      @media screen and (max-width: 740px) {
+        width: 100%;
+      }
+    }
+  }
+}
+/* NOTE: end: product slider */
+
+
+/**/
+
+
+/* NOTE: product detail */
+.product {
+  &__detail {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    height: 601px;
+    margin-top: -64px !important;
+    margin-bottom: 128px !important;
+    border: 1px solid #EAEAEA;
+    background: white;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1140px) {
+      margin-top: 0 !important;
+    }
+  }
+
+  &__type {
+    position: relative;
+    margin-top: 64px;
+    margin-bottom: 27px;
+    text-transform: uppercase;
+
+    & p {
+      font-size: 14px;
+      font-weight: 100;
+      color: $colorRed;
+    }
+  }
+
+  &__type:before {
+    position: absolute;
+    content:"";
+    bottom: -12px;
+    left: 50%;
+    width: 60%;
+    height: 3px;
+    margin-left: -30%;
+    background: #EF5B70
+  }
+
+  &__title {
+    margin-bottom: 49px;
+
+    & h1 {
+      font-size: 18px;
+      font-weight: 100;
+      text-transform: uppercase;
+      color: #4D4D4D;
+    }
+  }
+
+  &__description {
+    width: 555px;
+    text-align: center;
+    margin-bottom: 22px;
+
+    @media screen and (max-width: 740px) {
+      width: auto;
+    }
+
+    & p {
+      color: #5E5E5E;
+    }
+  }
+
+  &__price {
+    position: relative;
+    margin-bottom: 64px;
+    text-transform: uppercase;
+
+    & p {
+      font-size: 24px;
+      font-weight: 100;
+      color: #EF5B70;
+    }
+  }
+
+  &__price:before {
+    position: absolute;
+    content:"";
+    bottom: -33px;
+    left: 50%;
+    width: 642px;
+    height: 1px;
+    margin-left: calc(-642px / 2);
+    background: #EAEAEA;
+
+    @media screen and (max-width: 740px) {
+      width: 175px;
+      margin-left: calc(-175px / 2);
+    }
+  }
+
+  &__parameters {
+    margin-top: 28px;
+    margin-bottom: 34px;
+  }
+
+  &__select {
+    width: auto;
+    padding-right: 20px;
+    text-transform: uppercase;
+    border: none;
+    background: url('../../src/img/arrow-down.png') no-repeat right center;
+    color: #9F9F9F;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+  }
+
+  &__button {
+    width: 212px;
+    height: 48px;
+    margin-bottom: 64px;
+    border: 1px solid red;
+
+    & a {
+      display: block;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      color: #FF6A6A;
+      line-height: 3;
+    }
+  }
+}
+/* NOTE: end: product detail */
+
+
+/**/
+
+
+/* NOTE: product recommended */
+.product {
+  &__recommended {
+    width: 100%;
+    height: 581px;
+    margin-bottom: 128px !important;
+
+    @media screen and (max-width: 1140px) {
+      width: 768px;
+    }
+
+    @media screen and (max-width: 740px) {
+      width: auto;
+      height: 100%;
+    }
+
+    &-wrapper {
+      @include flexCenterBlock(flex-start);
+
+      gap: 30px;
+
+      @media screen and (max-width: 1140px) {
+        display: block;
+        width: 768px;
+        height: 581px;
+        overflow: hidden;
+
+        & .products__item {
+          float: left;
+
+          &:not(:last-child) {
+            margin-right: 24px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 740px) {
+        @include flexCenterBlock();
+
+        width: auto;
+        height: 100%;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__video video {
+    width: 360px;
+    height: 420px;
+  }
+}
+/* NOTE: end: product recommended */
+

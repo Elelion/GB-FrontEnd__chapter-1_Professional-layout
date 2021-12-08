@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="src/css/style.css">
+
+  <!-- NOTE: additional lib's -->
+
+  <!-- NOTE: используется когда макет сделан на fontawesome
+   если в макете лишь пару иконок то проще скачать из SVG и рендерить
+   чем подключать всю библиотеку, тк она оч тяжелая, в данном примере
+   мы испольщуем его только для футера в обучающих целях -->
+  <script src="https://kit.fontawesome.com/905c41fdf2.js"
+          crossorigin="anonymous">
+  </script>
+
+  <title>Title</title>
+</head>
+<body>
+  <header class="header">
+  <div class="container header__wrapper">
+    <nav class="header__left">
+      <a href="index.html" class="header__logo">
+        <img src="src/img/logo.png" alt="">
+      </a>
+      <img src="src/img/search.png" alt="">
+    </nav>
+
+    <nav class="header__center">
+      <a href="index.html">Гл</a>
+      <a href="catalog.html">Кат</a>
+      <a href="product.html">Прод</a>
+      <a href="cart.html">Кор</a>
+      <a href="registration.html">Рег</a>
+    </nav>
+
+    <nav class="header__right">
+
+      <div class="burger__wrapper">
+        <label for="toggle" class="burger">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </label>
+        <input type="checkbox" class="burger__toggle" id="toggle">
+
+        <nav class="burger__menu nav__menu">
+          <div class="nav__wrapper">
+            <label for="toggle" class="nav__close" id="burger"><i class="fas fa-times"></i></label>
+            <h2 class="nav__title">MENU</h2>
+
+            <h3 class="nav__heading">MAN</h3>
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Bags</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Denim</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+            </ul>
+
+            <h3 class="nav__heading">WOMAN</h3>
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Jackets & Coats</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Polos</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Shirts</a></li>
+            </ul>
+
+            <h3 class="nav__heading">KIDS</h3>
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#" class="nav__link">Accessories</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Jackets & Coats</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Polos</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">T-Shirts</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Shirts</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Bags</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+
+      <img class="header__item" src="src/img/login.png" alt="">
+
+      <div class="header__cart">
+        <img src="src/img/cart.png" class="header__item" alt="">
+        <div class="header__cart-amount">5</div>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+  <!-- ** -->
+
+  <main>
+    <section class="breadcrumb__chapter">
+      <div class="container breadcrumb__wrapper">
+        <div class="breadcrumb__left">
+          <h1>NEW ARRIVALS</h1>
+        </div>
+
+        <div class="breadcrumb__right">
+          <p>HOME / MEN / <span>NEW ARRIVALS</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <section class="product__slider">
+      <div class="product__slider-control_left product__slider-control">
+        <a href="#">
+          <i class="fas fa-angle-left"></i>
+        </a>
+      </div>
+      <div class="product__slider-content">
+        <img src="src/img/product-slider-1.png" alt="">
+      </div>
+      <div class="product__slider-control_right product__slider-control">
+        <a href="#">
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <section class="product__detail container">
+      <div class="product__type">
+        <p>Women collection</p>
+      </div>
+
+      <div class="product__title">
+        <h1>MOSCHINO CHEAP AND CHIC</h1>
+      </div>
+
+      <div class="product__description">
+        <p>Compellingly actualize fully researched processes before proactive
+          outsourcing. Progressively syndicate collaborative architectures
+          before cutting-edge services. Completely visualize parallel core
+          competencies rather than exceptional portals. </p>
+      </div>
+
+      <div class="product__price">
+        <p>$561</p>
+      </div>
+
+      <div class="product__parameters">
+        <select class="product__select">
+          <option value="0">Choise color</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+
+        <select class="product__select">
+          <option value="0">Choise size</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+
+        <select class="product__select">
+          <option value="0">QuantitY</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+
+      <div class="product__button">
+        <a href="#">Add to Cart</a>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <section class="product__recommended container">
+      <div class="product__recommended-wrapper">
+        <div class="products__item">
+          <div class="products__img">
+            <img src="src/img/product-4.jpeg"/>
+          </div>
+
+          <div class="products__info">
+            <p class="products__title">
+              ELLERY X M'O CAPSULE
+            </p>
+
+            <p class="products__description">
+              Known for her sculptural takes on traditional tailoring,
+              Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+            </p>
+
+            <p class="products__price">
+              $52.00
+            </p>
+          </div>
+        </div>
+
+        <div class="products__item">
+          <div class="products__video">
+            <video src="src/video/waves.mp4"
+                   controls
+                   loop
+                   muted
+                   autoplay
+                   width="400"
+                   height="300">
+            </video>
+          </div>
+
+          <div class="products__info">
+            <p class="products__title">
+              ELLERY X M'O CAPSULE
+            </p>
+
+            <p class="products__description">
+              Known for her sculptural takes on traditional tailoring,
+              Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+            </p>
+
+            <p class="products__price">
+              $52.00
+            </p>
+          </div>
+        </div>
+
+        <div class="products__item">
+          <div class="products__img">
+            <img src="src/img/product-6.jpeg"/>
+          </div>
+
+          <div class="products__info">
+            <p class="products__title">
+              ELLERY X M'O CAPSULE
+            </p>
+
+            <p class="products__description">
+              Known for her sculptural takes on traditional tailoring,
+              Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+            </p>
+
+            <p class="products__price">
+              $52.00
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ** -->
+
+  <footer class="footer">
+    <section class="footer__subscribe">
+      <div class="footer__subscribe-wrapper container">
+        <div class="footer__subscribe-left">
+          <img src="src/img/subscribe-1.png" alt="">
+          <p class="footer__subscribe-description">“Vestibulum quis porttitor dui!
+            Quisque viverra nunc mi, a pulvinar purus condimentum“</p>
+        </div>
+        <div class="footer__subscribe-right">
+          <p class="footer__subscribe-description"><span>SUBSCRIBE</span>
+            FOR OUR NEWLETTER AND PROMOTION</p>
+
+          <div class="footer__subscribe_right-subscribe">
+            <form action="#" method="POST" class="footer__subscribe-form">
+              <input type="email"
+                     value=""
+                     placeholder="Enter Your Email"
+                     autofocus
+                     required
+                     pattern="\S+[А-яа-я]"
+                     class="footer__subscribe_search-input">
+
+              <input type="submit"
+                     value="Search"
+                     class="footer__subscribe_search-btn">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ** -->
+
+    <div class="footer__copyright container">
+      <div class="footer__copyright-left">
+        <p>© 2021  Brand  All Rights Reserved.</p>
+      </div>
+
+      <div class="footer__copyright-right">
+        <a href="#" class="footer__copyright-facebook footer__social">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-instagram footer__social">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-twitter footer__social">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="#" class="footer__copyright-p footer__social">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+      </div>
+    </div>
+
+  </footer>
+</body>
+</html>

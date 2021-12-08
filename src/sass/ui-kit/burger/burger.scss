@@ -1,0 +1,124 @@
+@import "../../general-mixins";
+@import "../../settings";
+
+
+/**/
+
+
+.burger {
+  width: 32px;
+  height: 32px;
+  padding-top: 8px;
+  font-size: 16px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+
+  &__wrapper {
+    width: 32px;
+    height: 32px;
+    margin-right: 33px;
+    overflow: hidden;
+  }
+
+  & span {
+    @include userSelectDisabled();
+
+    display: block;
+    width: 23px;
+    height: 2px;
+    text-align: center;
+    margin: 6px 0 3px 3px;
+    background-color: white;
+  }
+
+  /* NOTE: checked status look in /js/burger.js */
+
+  &__toggle {
+    display: none;
+
+    /**
+    NOTE:
+    Этот селектор означает, что стиль применяется только к параграфам,
+    непосредственно следуя за другим абзацем.
+    Простой селектор p применил бы стиль к каждому абзацу на странице.
+     */
+    &:checked + .burger__menu {
+      opacity: 1;
+      transition: all ease-in 0.3s;
+      color: #6F6E6E;
+      background: white;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    top: 75px;
+    height: calc(100vh - 63px);
+    margin: 0;
+    padding: 1%;
+    opacity: 0;
+    overflow-y: scroll;
+  }
+}
+
+/**/
+
+.nav {
+  &__menu {
+    width: 232px;
+    padding: 20px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-top: 27px;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+  }
+
+  &__heading {
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 100;
+    color: $colorRed;
+  }
+
+  &__item {
+    margin-top: 12px;
+    margin-left: 21px;
+    list-style: none;
+
+    & a {
+      font-size: 14px;
+      font-weight: 100;
+      text-decoration: none;
+      color: #6F6E6E;
+    }
+  }
+
+}
+
+/* NOTE: аналог if / else в JS -> burger.js */
+/*
+#burger:checked ˜.nav__menu {
+  opacity: 1;
+}
+
+#burger:not(:checked) ˜.nav__menu {
+  opacity: 0;
+}
+*/

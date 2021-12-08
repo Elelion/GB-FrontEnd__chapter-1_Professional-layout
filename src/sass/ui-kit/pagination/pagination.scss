@@ -1,0 +1,41 @@
+@import "../../general-mixins";
+@import "../../settings";
+
+
+/**/
+
+
+.pagination {
+  @include flexCenterBlock(space-between);
+}
+
+.pagination a {
+  display: block;
+  width: 8px;
+  padding: 0 12px;
+  height: inherit;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 2.8;
+  text-decoration: none;
+  color: #EBEBEB;
+  transition: background-color .3s;
+}
+
+.pagination a:first-child {
+  color: black;
+}
+
+.pagination a:last-child {
+  color: black;
+}
+
+.pagination a.active {
+  color: $colorRed;
+  animation: 2s testAnimation;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
