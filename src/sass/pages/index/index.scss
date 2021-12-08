@@ -110,6 +110,16 @@
     width: 100%;
     height: 180px;
 
+    & a {
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(1.3);
+        transition: all 0.5s;
+      }
+    }
+
     &:nth-child(1) {
       background: url("../../src/img/category-woman.png") no-repeat center;
     }
@@ -125,6 +135,8 @@
     &:nth-child(4) {
       background: url("../../src/img/category-accesories.png") no-repeat center;
     }
+
+
 
     & p {
       font-size: 24px;

@@ -41,6 +41,10 @@ $productHeightImg: 420px;
       */
       transform: rotate(360deg);
     }
+
+    & a {
+      text-decoration: none;
+    }
   }
 
   &__img img, &__video video {
@@ -87,6 +91,7 @@ $productHeightImg: 420px;
     min-height: 116px;
     margin: 26px auto;
     flex-direction: column;
+    align-items: stretch;
   }
 
   &__title {
